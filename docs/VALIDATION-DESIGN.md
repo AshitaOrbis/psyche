@@ -6,9 +6,9 @@ Does injecting a personality-derived behavioral snippet into Claude's system pro
 
 The claim motivating Psyche is that trait labels ("High Openness, Low Agreeableness") are functionally useless in system prompts, but behavioral snippets ("Prefers probabilistic framing over categorical claims; skip unnecessary caveats") change what the model outputs. This claim is testable.
 
-## Background: Peters & Matz (2024)
+## Background: Peters, Cerf, & Matz (2024)
 
-Peters and Matz demonstrated that LLMs can predict Big Five personality traits from text corpora with meaningful accuracy:
+Peters, Cerf, and Matz demonstrated that LLMs can predict Big Five personality traits from text corpora with meaningful accuracy:
 
 - **Assessment-optimized prompting**: r ~ .44 correlation with self-report (structured prompt instructing the model to act as a psychometrician)
 - **Generic prompting** ("analyze this text for personality"): r ~ .117
@@ -16,7 +16,7 @@ Peters and Matz demonstrated that LLMs can predict Big Five personality traits f
 
 The key finding: structured, assessment-optimized prompts outperform generic prompts by roughly 3.8x. The framing of the task matters more than the raw capability.
 
-Psyche uses this methodology in its LLM inference method (weight 0.25 in the final profile). But Peters and Matz tested the *forward* direction: text corpus -> personality prediction. The question Psyche hasn't answered is the *reverse*: personality context -> behavioral shift.
+Psyche uses this methodology in its LLM inference method (weight 0.25 in the final profile). But Peters, Cerf, and Matz tested the *forward* direction: text corpus -> personality prediction. The question Psyche hasn't answered is the *reverse*: personality context -> behavioral shift.
 
 ## The Reverse Design
 
