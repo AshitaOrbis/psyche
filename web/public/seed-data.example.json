@@ -1,0 +1,61 @@
+{
+  "sessions": {
+    "ipip-neo-120": {
+      "instrumentId": "ipip-neo-120",
+      "startedAt": 1700000000000,
+      "responses": [
+        {"itemId": "item-001", "value": 4, "timestamp": 1700000001000},
+        {"itemId": "item-002", "value": 2, "timestamp": 1700000002000},
+        {"itemId": "item-003", "value": 5, "timestamp": 1700000003000}
+      ],
+      "completedAt": 1700001000000,
+      "version": 1
+    },
+    "crt-7": {
+      "instrumentId": "crt-7",
+      "startedAt": 1700002000000,
+      "responses": [
+        {"itemId": "crt-001", "value": "5", "timestamp": 1700002001000},
+        {"itemId": "crt-002", "value": "29", "timestamp": 1700002002000},
+        {"itemId": "crt-003", "value": "20", "timestamp": 1700002003000}
+      ],
+      "completedAt": 1700003000000,
+      "version": 1
+    },
+    "rosenberg": {
+      "instrumentId": "rosenberg",
+      "startedAt": 1700004000000,
+      "responses": [
+        {"itemId": "rse-001", "value": 3, "timestamp": 1700004001000},
+        {"itemId": "rse-002", "value": 2, "timestamp": 1700004002000},
+        {"itemId": "rse-003", "value": 4, "timestamp": 1700004003000}
+      ],
+      "completedAt": 1700005000000,
+      "version": 1
+    },
+    "hexaco-60": {
+      "instrumentId": "hexaco-60",
+      "startedAt": 1700006000000,
+      "responses": [
+        {"itemId": "hex-001", "value": 4, "timestamp": 1700006001000},
+        {"itemId": "hex-002", "value": 3, "timestamp": 1700006002000},
+        {"itemId": "hex-003", "value": 5, "timestamp": 1700006003000}
+      ],
+      "completedAt": 1700007000000,
+      "version": 1
+    },
+    "ecr-r": {
+      "instrumentId": "ecr-r",
+      "startedAt": 1700008000000,
+      "responses": [
+        {"itemId": "ecr-001", "value": 3, "timestamp": 1700008001000},
+        {"itemId": "ecr-002", "value": 5, "timestamp": 1700008002000},
+        {"itemId": "ecr-003", "value": 2, "timestamp": 1700008003000}
+      ],
+      "completedAt": 1700009000000,
+      "version": 1
+    }
+  },
+  "exportedAt": "2026-01-01T00:00:00.000Z",
+  "version": "1.0.0"
+}

@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.venv/
+
+# Build
+dist/
+*.pyc
+__pycache__/
+
+# Private data (never commit)
+profiles/
+data/raw/
+data/ingested/
+data/sampled/
+web/public/seed-data.json
+web/public/profile.json
+web/test-results/
+analysis/psyche_analysis/__pycache__/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# Test coverage
+coverage/
+.vitest/

@@ -1,0 +1,95 @@
+{
+  "version": 2,
+  "created_at": "2026-01-01T00:00:00.000000",
+  "big_five": {
+    "domains": {
+      "N": {
+        "final_score": 50.0,
+        "ci_lower": 40.0,
+        "ci_upper": 60.0,
+        "confidence": "medium",
+        "estimates": [
+          {"score": 50.0, "confidence": "high", "method": "self-report", "evidence": []},
+          {"score": 50.0, "confidence": "medium", "method": "llm-claude", "evidence": []}
+        ],
+        "divergence": 0.0
+      },
+      "E": {
+        "final_score": 50.0,
+        "ci_lower": 40.0,
+        "ci_upper": 60.0,
+        "confidence": "medium",
+        "estimates": [],
+        "divergence": 0.0
+      },
+      "O": {
+        "final_score": 50.0,
+        "ci_lower": 40.0,
+        "ci_upper": 60.0,
+        "confidence": "medium",
+        "estimates": [],
+        "divergence": 0.0
+      },
+      "A": {
+        "final_score": 50.0,
+        "ci_lower": 40.0,
+        "ci_upper": 60.0,
+        "confidence": "medium",
+        "estimates": [],
+        "divergence": 0.0
+      },
+      "C": {
+        "final_score": 50.0,
+        "ci_lower": 40.0,
+        "ci_upper": 60.0,
+        "confidence": "medium",
+        "estimates": [],
+        "divergence": 0.0
+      }
+    },
+    "facets": {},
+    "facet_scores": []
+  },
+  "values": {"values": {}, "top_3": [], "bottom_3": []},
+  "clinical": {"phq9": null, "gad7": null, "phq9_severity": "", "gad7_severity": ""},
+  "cognitive": {"crt_score": null, "crt_percentile": null, "need_for_cognition": null, "self_esteem": null},
+  "dark_triad": {"machiavellianism": null, "narcissism": null, "psychopathy": null},
+  "attachment": {"anxiety": null, "avoidance": null},
+  "emotion_reg": {"reappraisal": null, "suppression": null},
+  "empathy": {"fantasy": null, "perspective_taking": null, "empathic_concern": null, "personal_distress": null},
+  "social": {"self_monitoring": null, "loc_internal": null, "loc_external": null},
+  "grit": {"perseverance": null, "interest_consistency": null},
+  "vocational": {"realistic": null, "investigative": null, "artistic": null, "social": null, "enterprising": null, "conventional": null},
+  "needs": {"autonomy": null, "competence": null, "relatedness": null},
+  "hexaco": {"honesty_humility": null, "emotionality": null, "extraversion": null, "agreeableness": null, "conscientiousness": null, "openness": null},
+  "persona": {
+    "communication": {
+      "directness": "",
+      "depth_preference": "",
+      "rationale_need": "",
+      "audience_adaptation": "",
+      "analogy_domains": []
+    },
+    "decision_making": {"attribution_style": "", "risk_orientation": "", "deliberation_style": "", "loss_aversion": ""},
+    "conflict_response": {"under_criticism": "", "regulation_strategy": "", "manipulation_tolerance": "", "feedback_preference": ""},
+    "motivation": {"primary_needs": [], "persistence_pattern": "", "interest_consistency": "", "domain_preferences": []},
+    "epistemic_style": {"analytical_tendency": "", "uncertainty_tolerance": "", "source_preference": "", "framework_building": ""},
+    "interpersonal": {"trust_threshold": "", "empathy_mode": "", "ethical_stance": "", "reciprocity_expectation": ""},
+    "stress_response": {"crisis_mode": "", "recovery_strategy": "", "coping_mechanisms": [], "resilience_source": ""},
+    "relationships": {"attachment_style": "", "initiation_pattern": "", "maintenance_pattern": "", "loss_response": ""},
+    "flow_states": {"triggers": [], "phenomenology": "", "frequency": "", "barriers": ""},
+    "self_concept": {"identity_model": "", "competence_gap": "", "comparative_orientation": "", "self_narrative": ""},
+    "characteristic_phrases": [],
+    "decision_examples": [],
+    "conflict_examples": []
+  },
+  "metadata": {
+    "methods_used": [],
+    "corpus_word_count": 0,
+    "corpus_sources": [],
+    "llm_tokens_used": 0,
+    "analysis_date": null
+  },
+  "narrative": "",
+  "claude_md_snippet": ""
+}
