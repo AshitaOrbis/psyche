@@ -1,0 +1,5 @@
+{
+  "formal": ["academic"],
+  "messaging": ["sms", "messenger"],
+  "ai": ["chatgpt", "claude_ai"]
+}
