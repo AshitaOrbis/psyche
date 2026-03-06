@@ -83,12 +83,44 @@ cd analysis && uv run psyche report         # Generate narrative
 | 16 | RIASEC-48 | 48 | 5-pt Likert | Vocational interests (6 types) |
 | 17 | BPNS-9 | 9 | 7-pt Likert | Basic needs: Autonomy, Competence, Relatedness |
 
+## Research Audit Trail
+
+Analysis results feed a working paper (`shared/content/research/convergent-personality-assessment.md`). Maintain a clean audit trail:
+
+### Archive Convention
+
+**NEVER overwrite or delete analysis results.** Before re-running any analysis:
+
+1. Archive current results to `profiles/analysis/archive/YYYY-MM-DD-{reason}/`
+2. Write a `MANIFEST.md` in the archive directory documenting:
+   - Date and reason for archival
+   - What changed (bug fix, parameter change, new data)
+   - Impact assessment (which scores changed, by how much)
+   - Files included
+3. Cross-reference related archives (e.g., a narrative fix archive should reference the original corpus archive if the same bug applied)
+
+### Result Provenance
+
+Every analysis output JSON should be self-documenting. At minimum, the output must record:
+- Model used (full model ID or CLI shortname)
+- Words analyzed (after all sampling/chunking, not total corpus size)
+- Total corpus words (so the sampling ratio is visible)
+- Number of samples / chunks
+- Timestamp of analysis run
+- Any truncation or sampling that occurred
+
+### Data Integrity Issue — RESOLVED (2026-03-04)
+
+The truncation bug in `prepare_text_chunks()` has been fixed. The pipeline now segments long samples into ~2,000-word units at word boundaries (preserving all content) and uses source-stratified round-robin chunking. The expanded corpus analysis (5 sources, 1.47M words, 13 analysis levels) is complete. See `profiles/analysis/archive/2026-03-03-pre-chunking-fix/MANIFEST.md` for the pre-fix archive and `BACKLOG.md` for the full resolution summary. Research paper updated to v2 with corrected scores.
+
 ## Corpus Sources
 
-| Source | Format | Location |
-|--------|--------|----------|
-| ChatGPT | JSON tree | data/raw/chatgpt -> symlink |
-| Claude.ai | JSON array | data/raw/claude-ai -> symlink |
-| SMS | JSONL | data/raw/sms -> symlink |
-| Academic Writing | Markdown | data/raw/academic -> symlink |
-| Facebook | Markdown + JSON | data/raw/facebook -> symlink |
+| Source | Format | Location | Words |
+|--------|--------|----------|-------|
+| SMS | JSONL | data/raw/sms -> symlink | 401K |
+| Facebook Messenger | JSONL | data/raw/facebook -> symlink | 413K |
+| ChatGPT | JSON tree | data/raw/chatgpt -> symlink | 333K |
+| Claude.ai | JSON array | data/raw/claude-ai -> symlink | 167K |
+| Academic Writing | Markdown | data/raw/academic -> symlink | 151K |
+
+Total: ~1.47M words across 5 sources, ~62K samples. Analysis output: `profiles/analysis/corpus/`.

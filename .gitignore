@@ -9,6 +9,7 @@ __pycache__/
 
 # Private data (never commit)
 profiles/
+!web/public/profiles/
 data/raw/
 data/ingested/
 data/sampled/
