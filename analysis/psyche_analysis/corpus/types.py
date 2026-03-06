@@ -11,7 +11,7 @@ class TextSample(BaseModel):
     """A single text sample from any source."""
 
     id: str
-    source: str  # chatgpt, claude_ai, sms, academic, facebook
+    source: str  # chatgpt, claude_ai, sms, messenger, academic
     author: str  # "self" for user's own text, name for others
     timestamp: datetime | None = None
     text: str

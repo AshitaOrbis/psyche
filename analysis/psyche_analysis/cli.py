@@ -19,7 +19,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 @app.command()
 def ingest(
     source: str = typer.Argument(
-        help="Source to ingest: chatgpt, claude_ai, sms, academic, facebook, all"
+        help="Source to ingest: chatgpt, claude_ai, sms, messenger, academic, all"
     ),
 ) -> None:
     """Ingest text corpus from a source."""
@@ -100,7 +100,7 @@ def analyze(
         help="Analysis method: llm-claude, empath, all"
     ),
     model: str = typer.Option("claude-sonnet-4-5-20250514", help="LLM model to use"),
-    max_samples: int = typer.Option(500, help="Max samples for LLM analysis"),
+    max_samples: int = typer.Option(0, help="Max samples for LLM analysis (0 = no limit)"),
 ) -> None:
     """Run personality inference on sampled corpus."""
     from .corpus.manager import load_samples
@@ -111,8 +111,8 @@ def analyze(
         return
 
     samples = load_samples(sampled_path)
-    # For LLM, limit samples to keep API costs reasonable
-    llm_samples = samples[:max_samples] if len(samples) > max_samples else samples
+    # For LLM, optionally limit samples (0 = no limit)
+    llm_samples = samples[:max_samples] if max_samples > 0 and len(samples) > max_samples else samples
 
     output_dir = PROFILES_DIR / "analysis"
 
@@ -146,10 +146,19 @@ def synthesize(
     console.print("[bold]Synthesizing profile...[/bold]")
     profile = merge_profile(analysis_dir, self_report)
 
-    # Populate corpus metadata from sampled data
+    # Populate corpus metadata from ingested data (preferred) or sampled data
     from .corpus.manager import load_samples, compute_stats
+    ingested_dir = DATA_DIR / "ingested"
     sampled_path = DATA_DIR / "sampled" / "corpus.jsonl"
-    if sampled_path.exists():
+    if ingested_dir.exists() and any(ingested_dir.glob("*.jsonl")):
+        all_ingested = []
+        for jsonl in sorted(ingested_dir.glob("*.jsonl")):
+            if jsonl.stem != "all":
+                all_ingested.extend(load_samples(jsonl))
+        st = compute_stats(all_ingested)
+        profile.metadata.corpus_word_count = st.total_words
+        profile.metadata.corpus_sources = list(st.by_source.keys())
+    elif sampled_path.exists():
         sampled = load_samples(sampled_path)
         st = compute_stats(sampled)
         profile.metadata.corpus_word_count = st.total_words

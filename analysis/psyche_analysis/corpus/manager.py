@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import random
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 
 import orjson
@@ -13,7 +14,7 @@ from .chatgpt import parse_chatgpt
 from .claude_ai import parse_claude_ai
 from .sms import parse_sms
 from .academic import parse_academic
-from .facebook import parse_facebook
+from .voice_clone import parse_voice_clone
 
 
 # Default data directory (relative to project root)
@@ -30,19 +31,28 @@ def ingest_source(source: str, data_dir: Path = DEFAULT_DATA_DIR) -> list[TextSa
             path = data_dir / "claude-ai" / "conversations.json"
             return parse_claude_ai(path) if path.exists() else []
         case "sms":
-            path = data_dir / "sms.jsonl"
-            return parse_sms(path) if path.exists() else []
+            # Combined: old_phone (2015-2019) + sms_full (2019-2026)
+            # Dedup overlap: old_phone messages before 2019-10-06 only
+            samples: list[TextSample] = []
+            old_phone = data_dir / "sms_old_phone.jsonl"
+            if old_phone.exists():
+                cutoff = datetime(2019, 10, 6, tzinfo=timezone.utc)
+                samples.extend(parse_voice_clone(old_phone, "sms", before=cutoff))
+            sms_full = data_dir / "sms_full.jsonl"
+            if sms_full.exists():
+                samples.extend(parse_voice_clone(sms_full, "sms"))
+            return samples
+        case "messenger":
+            path = data_dir / "messenger.jsonl"
+            return parse_voice_clone(path, "messenger") if path.exists() else []
         case "academic":
             path = data_dir / "academic"
             return parse_academic(path) if path.is_dir() else []
-        case "facebook":
-            path = data_dir / "facebook"
-            return parse_facebook(path) if path.is_dir() else []
         case _:
             raise ValueError(f"Unknown source: {source}")
 
 
-ALL_SOURCES = ["chatgpt", "claude_ai", "sms", "academic", "facebook"]
+ALL_SOURCES = ["chatgpt", "claude_ai", "sms", "messenger", "academic"]
 
 
 def ingest_all(data_dir: Path = DEFAULT_DATA_DIR) -> list[TextSample]:

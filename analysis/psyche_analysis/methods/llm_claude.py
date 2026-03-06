@@ -57,18 +57,53 @@ class LLMAnalysisResult(BaseModel):
     total_tokens: int = 0
 
 
+def segment_samples(
+    samples: list[TextSample],
+    max_words_per_segment: int = 2000,
+) -> list[TextSample]:
+    """Split long samples into ~2K-word segments to prevent truncation.
+
+    Short samples pass through unchanged. Long samples are split at word
+    boundaries into segments of approximately max_words_per_segment words.
+    """
+    result: list[TextSample] = []
+    for s in samples:
+        words = s.text.split()
+        if len(words) <= max_words_per_segment:
+            result.append(s)
+            continue
+
+        for i in range(0, len(words), max_words_per_segment):
+            seg_text = " ".join(words[i : i + max_words_per_segment])
+            seg_num = i // max_words_per_segment + 1
+            result.append(
+                TextSample(
+                    id=f"{s.id}_seg{seg_num:02d}",
+                    source=s.source,
+                    author=s.author,
+                    timestamp=s.timestamp,
+                    text=seg_text,
+                )
+            )
+    return result
+
+
 def prepare_text_chunks(
     samples: list[TextSample],
     max_words_per_chunk: int = 8000,
-    max_chunks: int = 5,
+    max_chunks: int = 10,
 ) -> list[str]:
     """Prepare text samples into chunks for LLM analysis.
 
     Chunks are assembled to maximize diversity across sources.
+    Samples are pre-segmented to avoid truncation of long documents.
     """
+    # Pre-segment long samples instead of truncating
+    segmented = segment_samples(samples)
+
     # Group by source
     by_source: dict[str, list[TextSample]] = {}
-    for s in samples:
+    for s in segmented:
         by_source.setdefault(s.source, []).append(s)
 
     # Sort each source by word count descending (prefer substantive samples)
@@ -92,13 +127,7 @@ def prepare_text_chunks(
             sample = sl[indices[i]]
             indices[i] += 1
 
-            # Truncate very long samples
-            text = sample.text
-            words = text.split()
-            if len(words) > 2000:
-                text = " ".join(words[:2000]) + " [truncated]"
-
-            sample_words = len(text.split())
+            sample_words = sample.word_count
 
             if current_words + sample_words > max_words_per_chunk and current_chunk:
                 chunks.append("\n\n---\n\n".join(current_chunk))
@@ -112,7 +141,7 @@ def prepare_text_chunks(
                 header += f", Date: {sample.timestamp.strftime('%Y-%m')}"
             header += "]"
 
-            current_chunk.append(f"{header}\n{text}")
+            current_chunk.append(f"{header}\n{sample.text}")
             current_words += sample_words
             added = True
 
