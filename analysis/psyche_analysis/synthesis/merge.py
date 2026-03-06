@@ -21,12 +21,13 @@ from .profile import (
 console = Console()
 
 # Method reliability weights (based on literature)
+# Empath excluded: measures language register, not personality traits.
+# Empath data is used for comparative corpus characterization only.
 METHOD_WEIGHTS = {
     "self-report": 0.35,  # Psychometric instruments
     "interview": 0.20,    # Semi-structured interview (Peters & Matz assessment condition)
     "llm-claude": 0.20,   # Assessment-optimized prompting (r~.44)
     "llm-gpt": 0.10,      # Cross-validation
-    "empath": 0.08,        # LIWC-validated lexical
     "huggingface": 0.07,   # Fine-tuned models
 }
 
@@ -81,12 +82,9 @@ def merge_profile(
         interview_data = json.loads(interview_path.read_text())
         methods_used.append("interview")
 
-    # Load Empath results
-    empath_path = analysis_dir / "empath.json"
-    empath_data = None
-    if empath_path.exists():
-        empath_data = json.loads(empath_path.read_text())
-        methods_used.append("empath")
+    # Empath is excluded from profile synthesis — it measures language
+    # register (what you write about), not personality traits (who you are).
+    # Empath data is used only for comparative corpus characterization.
 
     # Load self-report results
     self_report = None
@@ -118,16 +116,6 @@ def merge_profile(
                     confidence=domain_data.get("confidence", "medium"),
                     method="interview",
                     evidence=domain_data.get("evidence", []),
-                ))
-
-        # Empath estimate
-        if empath_data:
-            bf_estimates = empath_data.get("big_five_estimates", {})
-            if domain_key in bf_estimates:
-                estimates.append(TraitEstimate(
-                    score=bf_estimates[domain_key],
-                    confidence="low",  # Empath is indirect
-                    method="empath",
                 ))
 
         # Self-report estimate (average NEO-120 and NEO-300 if both available)

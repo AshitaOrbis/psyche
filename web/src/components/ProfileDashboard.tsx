@@ -31,13 +31,18 @@ interface Manifest {
 }
 
 /** Corpus comparison data for multi-level analysis tab */
+interface EmpathDimension {
+  z: number;
+  label: string;
+}
+
 interface ComparisonLevel {
   level: string;
   description: string;
   llm_big_five?: Record<string, number | null>;
   corpus_words?: number;
   words_to_llm?: number;
-  empath_big_five?: Record<string, number>;
+  empath_lexical?: Record<string, EmpathDimension>;
   empath_words?: number;
 }
 
@@ -172,7 +177,6 @@ const METHOD_COLORS: Record<string, string> = {
   "self-report": "#2563eb",
   interview: "#7c3aed",
   "llm-claude": "#059669",
-  empath: "#d97706",
   "llm-gpt": "#dc2626",
   huggingface: "#6366f1",
 };
@@ -181,7 +185,6 @@ const METHOD_LABELS: Record<string, string> = {
   "self-report": "Self-Report (IPIP-NEO-120)",
   interview: "Interview (Peters & Matz)",
   "llm-claude": "LLM Corpus (Claude)",
-  empath: "Empath (Lexical)",
   "llm-gpt": "LLM Corpus (GPT)",
   huggingface: "HuggingFace (BERT)",
 };
@@ -679,7 +682,6 @@ function MethodsTab({ profile }: { profile: ProfileData }) {
             ["Self-Report", "35%", "Psychometric instruments (alpha ~.85+)"],
             ["Interview", "20%", "Semi-structured assessment (r~.44)"],
             ["LLM Corpus", "20%", "Assessment-optimized prompting"],
-            ["Empath", "8%", "LIWC-validated lexical analysis"],
           ].map(([name, weight, desc]) => (
             <div key={name as string} style={{ display: "flex", gap: "0.5rem" }}>
               <span style={{ fontWeight: 600, minWidth: 80 }}>{name}</span>
@@ -1118,12 +1120,29 @@ function CorpusAnalysisTab() {
   const eraData = buildChartData(eraKeys, ERA_LABELS);
   const mediumData = buildChartData(mediumKeys, MEDIUM_LABELS);
 
+  // Build lexical profile data for the heatmap
+  const buildLexicalData = (keys: string[], labels: Record<string, string>) =>
+    keys
+      .filter((key) => data.levels[key]?.empath_lexical)
+      .map((key) => ({
+        name: labels[key] ?? key,
+        ...Object.fromEntries(
+          DOMAIN_ORDER.map((d) => [d, data.levels[key]?.empath_lexical?.[d]?.z ?? 0])
+        ),
+        labels: Object.fromEntries(
+          DOMAIN_ORDER.map((d) => [d, data.levels[key]?.empath_lexical?.[d]?.label ?? "average"])
+        ),
+      }));
+
+  const hasLexical = Object.values(data.levels).some((l) => l.empath_lexical);
+
   return (
     <>
       <h2 style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}>Corpus Analysis</h2>
       <p style={{ color: "#6b7280", fontSize: "0.875rem", marginBottom: "2rem" }}>
         Big Five personality scores across 13 analysis levels from a 1.47M word corpus (5 sources).
-        Scores are from LLM inference (Claude Opus) on text chunks.
+        LLM scores are from Claude Opus inference on text chunks. Lexical profiles show relative
+        word-frequency patterns (what you write about varies by context, not who you are).
       </p>
 
       {/* By Source */}
@@ -1146,6 +1165,21 @@ function CorpusAnalysisTab() {
         description="Register effects on personality expression. Conscientiousness is notably higher in AI conversations (72) vs casual messaging (35). Neuroticism is much higher in messaging (70) than in AI contexts (40) — people express anxiety differently across mediums."
         data={mediumData}
       />
+
+      {/* Lexical Profile */}
+      {hasLexical && (
+        <div style={{ marginTop: "2rem" }}>
+          <h2 style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}>Lexical Profile (Empath)</h2>
+          <p style={{ color: "#6b7280", fontSize: "0.875rem", marginBottom: "1.5rem" }}>
+            Word frequency patterns across Big-Five-aligned dimensions. These are <strong>ordinal comparisons</strong> between
+            corpus segments — not personality scores. A &ldquo;high&rdquo; Openness label means more intellectual/creative
+            vocabulary relative to the corpus average, not a personality assessment.
+          </p>
+          <LexicalHeatmap title="By Source" data={buildLexicalData(sourceKeys, SOURCE_LABELS)} />
+          <LexicalHeatmap title="By Medium" data={buildLexicalData(mediumKeys, MEDIUM_LABELS)} />
+          <LexicalHeatmap title="By Era" data={buildLexicalData(eraKeys, ERA_LABELS)} />
+        </div>
+      )}
     </>
   );
 }
@@ -1189,6 +1223,80 @@ function CorpusChart({
           ))}
         </BarChart>
       </ResponsiveContainer>
+    </div>
+  );
+}
+
+const LEXICAL_Z_COLORS: Record<string, string> = {
+  high: "#166534",
+  "above average": "#4ade80",
+  average: "#e5e7eb",
+  "below average": "#fca5a5",
+  low: "#991b1b",
+};
+
+const LEXICAL_Z_TEXT: Record<string, string> = {
+  high: "#fff",
+  "above average": "#14532d",
+  average: "#374151",
+  "below average": "#7f1d1d",
+  low: "#fff",
+};
+
+function LexicalHeatmap({
+  title,
+  data,
+}: {
+  title: string;
+  data: { name: string; labels: Record<string, string>; [k: string]: unknown }[];
+}) {
+  if (!data.length) return null;
+
+  return (
+    <div style={{ marginBottom: "2rem" }}>
+      <h3 style={{ fontSize: "1rem", marginBottom: "0.75rem" }}>{title}</h3>
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.8rem" }}>
+          <thead>
+            <tr>
+              <th style={{ textAlign: "left", padding: "0.5rem", borderBottom: "2px solid #e5e7eb", minWidth: 100 }}></th>
+              {DOMAIN_ORDER.map((d) => (
+                <th key={d} style={{ padding: "0.5rem", borderBottom: "2px solid #e5e7eb", textAlign: "center", minWidth: 100 }}>
+                  {DOMAIN_LABELS[d]}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row) => (
+              <tr key={row.name}>
+                <td style={{ padding: "0.5rem", fontWeight: 600, borderBottom: "1px solid #f3f4f6" }}>{row.name}</td>
+                {DOMAIN_ORDER.map((d) => {
+                  const label = (row.labels as Record<string, string>)[d] ?? "average";
+                  const z = row[d] as number;
+                  return (
+                    <td
+                      key={d}
+                      style={{
+                        padding: "0.5rem",
+                        textAlign: "center",
+                        borderBottom: "1px solid #f3f4f6",
+                        background: LEXICAL_Z_COLORS[label] ?? "#e5e7eb",
+                        color: LEXICAL_Z_TEXT[label] ?? "#374151",
+                        fontWeight: label === "average" ? 400 : 600,
+                        borderRadius: "0.25rem",
+                      }}
+                      title={`z = ${z >= 0 ? "+" : ""}${z.toFixed(2)}`}
+                    >
+                      {label}
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

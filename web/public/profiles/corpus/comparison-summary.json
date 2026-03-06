@@ -12,12 +12,27 @@
       },
       "corpus_words": 1443892,
       "words_to_llm": 101005,
-      "empath_big_five": {
-        "N": 53.6,
-        "E": 55.2,
-        "O": 55.2,
-        "A": 52.0,
-        "C": 53.3
+      "empath_lexical": {
+        "N": {
+          "z": -0.02,
+          "label": "average"
+        },
+        "E": {
+          "z": -0.04,
+          "label": "average"
+        },
+        "O": {
+          "z": 0.02,
+          "label": "average"
+        },
+        "A": {
+          "z": -0.01,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.01,
+          "label": "average"
+        }
       },
       "empath_words": 1443892
     },
@@ -33,12 +48,27 @@
       },
       "corpus_words": 150980,
       "words_to_llm": 80180,
-      "empath_big_five": {
-        "N": 52.6,
-        "E": 53.4,
-        "O": 57.8,
-        "A": 51.8,
-        "C": 54.4
+      "empath_lexical": {
+        "N": {
+          "z": -0.1,
+          "label": "average"
+        },
+        "E": {
+          "z": -0.45,
+          "label": "below average"
+        },
+        "O": {
+          "z": 0.45,
+          "label": "above average"
+        },
+        "A": {
+          "z": -0.08,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.32,
+          "label": "above average"
+        }
       },
       "empath_words": 150980
     },
@@ -54,12 +84,27 @@
       },
       "corpus_words": 401252,
       "words_to_llm": 81850,
-      "empath_big_five": {
-        "N": 54.2,
-        "E": 56.5,
-        "O": 54.5,
-        "A": 52.4,
-        "C": 53.0
+      "empath_lexical": {
+        "N": {
+          "z": 0.11,
+          "label": "average"
+        },
+        "E": {
+          "z": 0.26,
+          "label": "above average"
+        },
+        "O": {
+          "z": -0.12,
+          "label": "average"
+        },
+        "A": {
+          "z": 0.13,
+          "label": "average"
+        },
+        "C": {
+          "z": -0.11,
+          "label": "average"
+        }
       },
       "empath_words": 401252
     },
@@ -75,12 +120,27 @@
       },
       "corpus_words": 413072,
       "words_to_llm": 88087,
-      "empath_big_five": {
-        "N": 55.0,
-        "E": 56.2,
-        "O": 54.4,
-        "A": 51.7,
-        "C": 53.1
+      "empath_lexical": {
+        "N": {
+          "z": 0.18,
+          "label": "above average"
+        },
+        "E": {
+          "z": 0.18,
+          "label": "above average"
+        },
+        "O": {
+          "z": -0.1,
+          "label": "average"
+        },
+        "A": {
+          "z": -0.12,
+          "label": "average"
+        },
+        "C": {
+          "z": -0.07,
+          "label": "average"
+        }
       },
       "empath_words": 413072
     },
@@ -96,12 +156,27 @@
       },
       "corpus_words": 333032,
       "words_to_llm": 80190,
-      "empath_big_five": {
-        "N": 52.0,
-        "E": 53.3,
-        "O": 55.7,
-        "A": 51.8,
-        "C": 53.2
+      "empath_lexical": {
+        "N": {
+          "z": -0.28,
+          "label": "below average"
+        },
+        "E": {
+          "z": -0.48,
+          "label": "below average"
+        },
+        "O": {
+          "z": 0.11,
+          "label": "average"
+        },
+        "A": {
+          "z": -0.07,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.01,
+          "label": "average"
+        }
       },
       "empath_words": 333032
     },
@@ -117,12 +192,27 @@
       },
       "corpus_words": 166992,
       "words_to_llm": 77990,
-      "empath_big_five": {
-        "N": 52.8,
-        "E": 55.0,
-        "O": 56.0,
-        "A": 52.2,
-        "C": 54.3
+      "empath_lexical": {
+        "N": {
+          "z": -0.16,
+          "label": "below average"
+        },
+        "E": {
+          "z": -0.11,
+          "label": "average"
+        },
+        "O": {
+          "z": 0.15,
+          "label": "average"
+        },
+        "A": {
+          "z": 0.14,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.24,
+          "label": "above average"
+        }
       },
       "empath_words": 166992
     },
@@ -138,12 +228,27 @@
       },
       "corpus_words": 95601,
       "words_to_llm": 104389,
-      "empath_big_five": {
-        "N": 54.7,
-        "E": 55.5,
-        "O": 53.8,
-        "A": 50.6,
-        "C": 53.5
+      "empath_lexical": {
+        "N": {
+          "z": 0.02,
+          "label": "average"
+        },
+        "E": {
+          "z": 0.06,
+          "label": "average"
+        },
+        "O": {
+          "z": -0.21,
+          "label": "below average"
+        },
+        "A": {
+          "z": -0.53,
+          "label": "low"
+        },
+        "C": {
+          "z": 0.1,
+          "label": "average"
+        }
       },
       "empath_words": 95601
     },
@@ -159,12 +264,27 @@
       },
       "corpus_words": 509258,
       "words_to_llm": 83185,
-      "empath_big_five": {
-        "N": 55.1,
-        "E": 56.3,
-        "O": 55.0,
-        "A": 52.2,
-        "C": 53.0
+      "empath_lexical": {
+        "N": {
+          "z": 0.24,
+          "label": "above average"
+        },
+        "E": {
+          "z": 0.21,
+          "label": "above average"
+        },
+        "O": {
+          "z": 0.01,
+          "label": "average"
+        },
+        "A": {
+          "z": 0.04,
+          "label": "average"
+        },
+        "C": {
+          "z": -0.12,
+          "label": "average"
+        }
       },
       "empath_words": 509258
     },
@@ -180,12 +300,27 @@
       },
       "corpus_words": 44682,
       "words_to_llm": 59601,
-      "empath_big_five": {
-        "N": 53.1,
-        "E": 55.8,
-        "O": 52.8,
-        "A": 52.1,
-        "C": 53.9
+      "empath_lexical": {
+        "N": {
+          "z": -0.07,
+          "label": "average"
+        },
+        "E": {
+          "z": 0.12,
+          "label": "average"
+        },
+        "O": {
+          "z": -0.46,
+          "label": "below average"
+        },
+        "A": {
+          "z": 0.01,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.12,
+          "label": "average"
+        }
       },
       "empath_words": 44682
     },
@@ -201,12 +336,27 @@
       },
       "corpus_words": 669899,
       "words_to_llm": 67899,
-      "empath_big_five": {
-        "N": 52.6,
-        "E": 54.7,
-        "O": 55.2,
-        "A": 52.1,
-        "C": 53.3
+      "empath_lexical": {
+        "N": {
+          "z": -0.18,
+          "label": "below average"
+        },
+        "E": {
+          "z": -0.17,
+          "label": "below average"
+        },
+        "O": {
+          "z": 0.02,
+          "label": "average"
+        },
+        "A": {
+          "z": 0.05,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.02,
+          "label": "average"
+        }
       },
       "empath_words": 669899
     },
@@ -222,12 +372,27 @@
       },
       "corpus_words": 150980,
       "words_to_llm": 80180,
-      "empath_big_five": {
-        "N": 52.6,
-        "E": 53.4,
-        "O": 57.8,
-        "A": 51.8,
-        "C": 54.4
+      "empath_lexical": {
+        "N": {
+          "z": -0.1,
+          "label": "average"
+        },
+        "E": {
+          "z": -0.45,
+          "label": "below average"
+        },
+        "O": {
+          "z": 0.45,
+          "label": "above average"
+        },
+        "A": {
+          "z": -0.08,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.32,
+          "label": "above average"
+        }
       },
       "empath_words": 150980
     },
@@ -243,12 +408,27 @@
       },
       "corpus_words": 814324,
       "words_to_llm": 81460,
-      "empath_big_five": {
-        "N": 54.6,
-        "E": 56.3,
-        "O": 54.5,
-        "A": 52.1,
-        "C": 53.0
+      "empath_lexical": {
+        "N": {
+          "z": 0.14,
+          "label": "average"
+        },
+        "E": {
+          "z": 0.22,
+          "label": "above average"
+        },
+        "O": {
+          "z": -0.11,
+          "label": "average"
+        },
+        "A": {
+          "z": 0.0,
+          "label": "average"
+        },
+        "C": {
+          "z": -0.09,
+          "label": "average"
+        }
       },
       "empath_words": 814324
     },
@@ -264,12 +444,27 @@
       },
       "corpus_words": 500024,
       "words_to_llm": 75086,
-      "empath_big_five": {
-        "N": 52.3,
-        "E": 53.9,
-        "O": 55.8,
-        "A": 51.9,
-        "C": 53.6
+      "empath_lexical": {
+        "N": {
+          "z": -0.24,
+          "label": "below average"
+        },
+        "E": {
+          "z": -0.36,
+          "label": "below average"
+        },
+        "O": {
+          "z": 0.12,
+          "label": "average"
+        },
+        "A": {
+          "z": -0.0,
+          "label": "average"
+        },
+        "C": {
+          "z": 0.09,
+          "label": "average"
+        }
       },
       "empath_words": 500024
     }

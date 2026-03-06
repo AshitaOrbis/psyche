@@ -34,7 +34,7 @@ sys.path.insert(0, str(ANALYSIS_ROOT))
 
 from psyche_analysis.corpus.types import TextSample
 from psyche_analysis.corpus.manager import load_samples, _code_ratio
-from psyche_analysis.methods.empath_analysis import EmpathResult, analyze_empath
+from psyche_analysis.methods.empath_analysis import EmpathResult, analyze_empath, compute_norms, CategoryNorms
 from psyche_analysis.methods.llm_claude import segment_samples
 
 from rich.console import Console
@@ -618,6 +618,7 @@ def run_level(
     skip_empath: bool = False,
     model: str = "opus",
     levels_dict: dict[str, dict] | None = None,
+    empath_norms: CategoryNorms | None = None,
 ) -> tuple[dict | None, dict | None]:
     """Run analysis for a single level. Returns (empath_dict, llm_dict)."""
     source = levels_dict or ANALYSIS_LEVELS
@@ -660,7 +661,7 @@ def run_level(
     # Empath analysis
     if not skip_empath:
         console.print(f"\n  [bold]Running Empath analysis...[/bold]")
-        empath_result = analyze_empath(samples)
+        empath_result = analyze_empath(samples, norms=empath_norms)
         empath_dict = json.loads(empath_result.model_dump_json())
         # Add provenance
         empath_dict["provenance"] = _build_provenance(
@@ -805,31 +806,34 @@ def print_comparison_table(levels_dict: dict[str, dict] | None = None):
     if results_llm:
         console.print(table)
 
-    # Empath table
+    # Empath lexical profile table
     if results_empath:
         console.print(f"\n[bold cyan]{sep}[/bold cyan]")
-        console.print("[bold cyan]  Empath Big Five: Per-Level Comparison[/bold cyan]")
+        console.print("[bold cyan]  Empath Lexical Profile: Per-Level Comparison[/bold cyan]")
         console.print(f"[bold cyan]{sep}[/bold cyan]")
 
-        empath_table = Table(title="Empath Corpus Analysis: Big Five Estimates by Level")
+        empath_table = Table(title="Empath Lexical Profile (ordinal, corpus-relative)")
         empath_table.add_column("Level", style="bold", min_width=18)
         for d in domains:
-            empath_table.add_column(d, justify="right", min_width=5)
+            empath_table.add_column(d, justify="center", min_width=14)
         empath_table.add_column("Total Words", justify="right", min_width=12)
 
         for level in level_keys:
             if level not in results_empath:
                 continue
             data = results_empath[level]
-            scores = data.get("big_five_estimates", {})
+            lp = data.get("lexical_profile", {})
             total_words = data.get("total_words", "?")
             words_str = f"{total_words:,}" if isinstance(total_words, int) else str(total_words)
 
-            empath_table.add_row(
-                level,
-                *[str(scores.get(d, "?")) for d in domains],
-                words_str,
-            )
+            cells = []
+            for d in domains:
+                dim = lp.get(d, {})
+                z = dim.get("z_score", 0)
+                label = dim.get("label", "?")
+                cells.append(f"{label} ({z:+.2f})")
+
+            empath_table.add_row(level, *cells, words_str)
 
         console.print(empath_table)
 
@@ -847,7 +851,11 @@ def print_comparison_table(levels_dict: dict[str, dict] | None = None):
             entry["corpus_words"] = prov.get("total_corpus_words")
             entry["words_to_llm"] = prov.get("words_to_llm")
         if level in results_empath:
-            entry["empath_big_five"] = results_empath[level].get("big_five_estimates", {})
+            lp = results_empath[level].get("lexical_profile", {})
+            entry["empath_lexical"] = {
+                d: {"z": lp.get(d, {}).get("z_score", 0), "label": lp.get(d, {}).get("label", "average")}
+                for d in domains
+            }
             entry["empath_words"] = results_empath[level].get("total_words")
         summary["levels"][level] = entry
 
@@ -915,6 +923,24 @@ def main():
     console.print(f"  LLM: {'SKIP' if args.skip_llm else args.model}")
     console.print(f"  Empath: {'SKIP' if args.skip_empath else 'enabled'}")
 
+    # Pre-compute Empath norms from the full corpus so per-level analysis
+    # is z-scored against the same baseline (not self-normed per level)
+    full_corpus_norms: CategoryNorms | None = None
+    if not args.skip_empath and len(levels_to_run) > 1:
+        console.print("\n[bold]Computing Empath corpus norms...[/bold]")
+        all_sources = set()
+        for level_key in levels_to_run:
+            cfg = active_levels[level_key]
+            all_sources.update(cfg["sources"])
+        full_samples = load_ingested_samples(
+            list(all_sources),
+            self_only=True,
+            filter_code=any(s in all_sources for s in ("chatgpt", "claude_ai")),
+        )
+        if full_samples:
+            full_corpus_norms = compute_norms(full_samples)
+            console.print(f"  Norms computed from {len(full_samples):,} samples, {full_corpus_norms.n_segments} segments")
+
     for level in levels_to_run:
         try:
             run_level(
@@ -923,6 +949,7 @@ def main():
                 skip_empath=args.skip_empath,
                 model=args.model,
                 levels_dict=active_levels,
+                empath_norms=full_corpus_norms,
             )
         except Exception as e:
             console.print(f"\n  [red]Error on level '{level}': {e}[/red]")
