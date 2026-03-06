@@ -16,6 +16,35 @@ import {
   Cell,
 } from "recharts";
 
+/** Manifest types for profile selector */
+interface ManifestEntry {
+  id: string;
+  name: string;
+  filename: string;
+  date: string;
+  description: string;
+}
+
+interface Manifest {
+  profiles: ManifestEntry[];
+  default: string;
+}
+
+/** Corpus comparison data for multi-level analysis tab */
+interface ComparisonLevel {
+  level: string;
+  description: string;
+  llm_big_five?: Record<string, number | null>;
+  corpus_words?: number;
+  words_to_llm?: number;
+  empath_big_five?: Record<string, number>;
+  empath_words?: number;
+}
+
+interface ComparisonSummary {
+  levels: Record<string, ComparisonLevel>;
+}
+
 /** Profile JSON types matching Python schema */
 interface TraitEstimate {
   score: number;
@@ -195,26 +224,67 @@ function severityColor(s: string | null): string {
 export function ProfileDashboard() {
   const [profile, setProfile] = useState<ProfileData | null>(null);
   const [expandedDomain, setExpandedDomain] = useState<string | null>(null);
-  const [activeTab, setActiveTab] = useState<"overview" | "methods" | "values" | "cognitive" | "extended" | "persona" | "narrative">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "methods" | "values" | "cognitive" | "extended" | "persona" | "narrative" | "corpus">("overview");
   const [loading, setLoading] = useState(true);
+  const [profileList, setProfileList] = useState<ManifestEntry[]>([]);
+  const [selectedProfileId, setSelectedProfileId] = useState<string>("");
 
-  // Auto-load profile from /profile.json if available
+  // Load manifest and default profile on mount
   useEffect(() => {
-    fetch("/profile.json")
+    fetch("/profiles/manifest.json")
       .then((r) => {
         if (!r.ok) throw new Error("Not found");
-        return r.json();
+        return r.json() as Promise<Manifest>;
       })
+      .then((manifest) => {
+        setProfileList(manifest.profiles);
+        const defaultId = manifest.default;
+        const defaultEntry = manifest.profiles.find((p) => p.id === defaultId) ?? manifest.profiles[0];
+        if (defaultEntry) {
+          setSelectedProfileId(defaultEntry.id);
+          return fetch(`/profiles/${defaultEntry.filename}`).then((r) => r.json());
+        }
+        return null;
+      })
+      .then((data: ProfileData | null) => {
+        if (data?.big_five && data?.version) {
+          setProfile(data);
+        }
+      })
+      .catch(() => {
+        // Fallback: load /profile.json directly
+        fetch("/profile.json")
+          .then((r) => {
+            if (!r.ok) throw new Error("Not found");
+            return r.json();
+          })
+          .then((data: ProfileData) => {
+            if (data.big_five && data.version) {
+              setProfile(data);
+            }
+          })
+          .catch(() => {});
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  const handleProfileSelect = (id: string) => {
+    if (id === "__import__") {
+      handleImport();
+      return;
+    }
+    const entry = profileList.find((p) => p.id === id);
+    if (!entry) return;
+    setSelectedProfileId(id);
+    fetch(`/profiles/${entry.filename}`)
+      .then((r) => r.json())
       .then((data: ProfileData) => {
         if (data.big_five && data.version) {
           setProfile(data);
         }
       })
-      .catch(() => {
-        // No auto-loaded profile, user must import manually
-      })
-      .finally(() => setLoading(false));
-  }, []);
+      .catch(() => alert("Failed to load profile"));
+  };
 
   const handleImport = () => {
     const input = document.createElement("input");
@@ -283,14 +353,37 @@ export function ProfileDashboard() {
             Generated {new Date(profile.created_at).toLocaleDateString()} | Methods: {profile.metadata.methods_used.join(", ")} | Corpus: {profile.metadata.corpus_word_count.toLocaleString()} words
           </p>
         </div>
-        <button onClick={handleImport} style={btnSecondary}>
-          Load Different Profile
-        </button>
+        {profileList.length > 0 ? (
+          <select
+            value={selectedProfileId}
+            onChange={(e) => handleProfileSelect(e.target.value)}
+            style={{
+              padding: "0.5rem 0.75rem",
+              border: "1px solid #d1d5db",
+              borderRadius: "0.375rem",
+              fontSize: "0.875rem",
+              background: "#fff",
+              cursor: "pointer",
+              minWidth: 200,
+            }}
+          >
+            {profileList.map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.name} ({p.date})
+              </option>
+            ))}
+            <option value="__import__">Import from file...</option>
+          </select>
+        ) : (
+          <button onClick={handleImport} style={btnSecondary}>
+            Load Different Profile
+          </button>
+        )}
       </div>
 
       {/* Tab navigation */}
       <div style={{ display: "flex", gap: "0.25rem", borderBottom: "2px solid #e5e7eb", marginBottom: "2rem" }}>
-        {(["overview", "methods", "values", "cognitive", "extended", "persona", "narrative"] as const).map((tab) => (
+        {(["overview", "methods", "values", "cognitive", "extended", "corpus", "persona", "narrative"] as const).map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
@@ -320,6 +413,7 @@ export function ProfileDashboard() {
       {activeTab === "values" && <ValuesTab profile={profile} />}
       {activeTab === "cognitive" && <CognitiveTab profile={profile} />}
       {activeTab === "extended" && <ExtendedBatteryTab profile={profile} />}
+      {activeTab === "corpus" && <CorpusAnalysisTab />}
       {activeTab === "persona" && <PersonaTab profile={profile} />}
       {activeTab === "narrative" && <NarrativeTab profile={profile} />}
     </div>
@@ -939,6 +1033,162 @@ function ScoreBar({ label, score, description, color }: { label: string; score: 
       {description && (
         <div style={{ marginLeft: 160 + 16, fontSize: "0.7rem", color: "#9ca3af", marginTop: "0.15rem" }}>{description}</div>
       )}
+    </div>
+  );
+}
+
+// ─── Corpus Analysis Tab ────────────────────────────────────
+
+const DOMAIN_COLORS: Record<string, string> = {
+  O: "#f59e0b",
+  C: "#2563eb",
+  E: "#059669",
+  A: "#7c3aed",
+  N: "#dc2626",
+};
+
+const SOURCE_LABELS: Record<string, string> = {
+  academic: "Academic",
+  sms: "SMS",
+  messenger: "Messenger",
+  chatgpt: "ChatGPT",
+  claude_ai: "Claude AI",
+};
+
+const ERA_LABELS: Record<string, string> = {
+  "era-2008-2015": "2008-2015",
+  "era-2015-2019": "2015-2019",
+  "era-2019-2024": "2019-2024",
+  "era-2024-2026": "2024-2026",
+};
+
+const MEDIUM_LABELS: Record<string, string> = {
+  "medium-formal": "Formal",
+  "medium-messaging": "Messaging",
+  "medium-ai": "AI",
+};
+
+function CorpusAnalysisTab() {
+  const [data, setData] = useState<ComparisonSummary | null>(null);
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    fetch("/profiles/corpus/comparison-summary.json")
+      .then((r) => {
+        if (!r.ok) throw new Error("Not found");
+        return r.json() as Promise<ComparisonSummary>;
+      })
+      .then(setData)
+      .catch(() => setError(true));
+  }, []);
+
+  if (error) {
+    return (
+      <div style={{ textAlign: "center", padding: "3rem", color: "#6b7280" }}>
+        <h2>Corpus Analysis</h2>
+        <p>No corpus analysis data available. Run the multi-level analysis pipeline first.</p>
+      </div>
+    );
+  }
+
+  if (!data) {
+    return <p style={{ color: "#6b7280", textAlign: "center", padding: "2rem" }}>Loading corpus data...</p>;
+  }
+
+  const sourceKeys = Object.keys(SOURCE_LABELS).filter((k) => k in data.levels);
+  const eraKeys = Object.keys(ERA_LABELS).filter((k) => k in data.levels);
+  const mediumKeys = Object.keys(MEDIUM_LABELS).filter((k) => k in data.levels);
+
+  const buildChartData = (keys: string[], labels: Record<string, string>) =>
+    keys.map((key) => {
+      const level = data.levels[key];
+      const bf = level?.llm_big_five ?? {};
+      return {
+        name: labels[key] ?? key,
+        O: bf.O ?? 0,
+        C: bf.C ?? 0,
+        E: bf.E ?? 0,
+        A: bf.A ?? 0,
+        N: bf.N ?? 0,
+        words: level?.corpus_words ?? 0,
+      };
+    });
+
+  const sourceData = buildChartData(sourceKeys, SOURCE_LABELS);
+  const eraData = buildChartData(eraKeys, ERA_LABELS);
+  const mediumData = buildChartData(mediumKeys, MEDIUM_LABELS);
+
+  return (
+    <>
+      <h2 style={{ fontSize: "1.25rem", marginBottom: "0.5rem" }}>Corpus Analysis</h2>
+      <p style={{ color: "#6b7280", fontSize: "0.875rem", marginBottom: "2rem" }}>
+        Big Five personality scores across 13 analysis levels from a 1.47M word corpus (5 sources).
+        Scores are from LLM inference (Claude Opus) on text chunks.
+      </p>
+
+      {/* By Source */}
+      <CorpusChart
+        title="By Source"
+        description="How personality expression varies by communication context. Note that Conscientiousness is much higher in AI conversations (71) than in messaging (35) — a register effect consistent with genre-influenced expression."
+        data={sourceData}
+      />
+
+      {/* By Era */}
+      <CorpusChart
+        title="By Era"
+        description="Longitudinal personality development across four time periods. The 2015-2019 era shows peak Neuroticism (76) during a turbulent life period, while the AI era (2024-2026) shows regression toward the mean."
+        data={eraData}
+      />
+
+      {/* By Medium */}
+      <CorpusChart
+        title="By Medium"
+        description="Register effects on personality expression. Conscientiousness is notably higher in AI conversations (72) vs casual messaging (35). Neuroticism is much higher in messaging (70) than in AI contexts (40) — people express anxiety differently across mediums."
+        data={mediumData}
+      />
+    </>
+  );
+}
+
+function CorpusChart({
+  title,
+  description,
+  data,
+}: {
+  title: string;
+  description: string;
+  data: { name: string; O: number; C: number; E: number; A: number; N: number; words: number }[];
+}) {
+  return (
+    <div style={{ marginBottom: "2.5rem" }}>
+      <h3 style={{ fontSize: "1rem", marginBottom: "0.25rem" }}>{title}</h3>
+      <p style={{ fontSize: "0.8rem", color: "#6b7280", marginBottom: "1rem", lineHeight: 1.5 }}>{description}</p>
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart data={data} barGap={1}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" fontSize={12} />
+          <YAxis domain={[0, 100]} fontSize={11} />
+          <Tooltip
+            formatter={(value: number, name: string) => [`${value}`, DOMAIN_LABELS[name] ?? name]}
+            labelFormatter={(label: string) => {
+              const entry = data.find((d) => d.name === label);
+              return entry ? `${label} (${entry.words.toLocaleString()} words)` : label;
+            }}
+          />
+          <Legend formatter={(value: string) => DOMAIN_LABELS[value] ?? value} />
+          {DOMAIN_ORDER.map((key) => (
+            <Bar
+              key={key}
+              dataKey={key}
+              fill={DOMAIN_COLORS[key]}
+              fillOpacity={0.8}
+              radius={[2, 2, 0, 0]}
+              barSize={16}
+              isAnimationActive={false}
+            />
+          ))}
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 }

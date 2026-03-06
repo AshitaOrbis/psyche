@@ -1,0 +1,19 @@
+{
+  "profiles": [
+    {
+      "id": "ryan-v2",
+      "name": "Ryan v2 (Corrected)",
+      "filename": "ryan-v2.json",
+      "date": "2026-03-06",
+      "description": "5-source corpus (1.47M words), fixed chunking pipeline"
+    },
+    {
+      "id": "ryan-v1",
+      "name": "Ryan v1 (Pre-Fix)",
+      "filename": "ryan-v1.json",
+      "date": "2026-02-25",
+      "description": "3-source corpus (527K words), truncated academic/FB data"
+    }
+  ],
+  "default": "ryan-v2"
+}

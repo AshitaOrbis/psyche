@@ -1,0 +1,977 @@
+{
+  "version": 2,
+  "created_at": "2026-02-25T21:04:24.800740",
+  "big_five": {
+    "domains": {
+      "N": {
+        "final_score": 58.8,
+        "ci_lower": 48.8,
+        "ci_upper": 68.8,
+        "confidence": "medium",
+        "estimates": [
+          {
+            "score": 62.0,
+            "confidence": "high",
+            "method": "llm-claude",
+            "evidence": [
+              "The fact that I have to interact with objective reality in order to acquire food, water, information, and shelter is the most anxiety causing aspect of my life.",
+              "I often start to wonder if I will ever be able to acquire enough knowledge to construct a reasonable subjective reality, coming to the conclusion that I obviously won't, and then realize that I might as well kill myself. Luckily I have enough hope in the future that suicidal ideation stays just that.",
+              "I often have unreasonable trepidation about imposing upon people",
+              "I was too worried to really ask for your perspective"
+            ]
+          },
+          {
+            "score": 68.0,
+            "confidence": "high",
+            "method": "interview",
+            "evidence": [
+              "Everything shuts down, I don't think it's explicable how I come back from it except by God's grace. I keep moving like a wounded animal, there is some inexhaustible drive or motivation, but there is no plan, the world is black and the walls are closing in.",
+              "Alcohol saved my life — never slid into irrecoverable alcoholism, but high consumption was a necessity to dull the pain, incredibly high for maybe 3 months and then high for about a year.",
+              "it always hurts to be around people, because they hurt themselves and make bad decisions and there's nothing I can do to stop it or help it.",
+              "I can't evaluate that because I just don't view myself comparatively, it hurts too much.",
+              "I'm not really motivated by comparison, and in fact am quite demotivated by it. There's always someone better so why try at all."
+            ]
+          },
+          {
+            "score": 52.3,
+            "confidence": "low",
+            "method": "empath",
+            "evidence": []
+          },
+          {
+            "score": 52.39999999999999,
+            "confidence": "high",
+            "method": "self-report",
+            "evidence": []
+          }
+        ],
+        "divergence": 6.7
+      },
+      "E": {
+        "final_score": 27.0,
+        "ci_lower": 3.6,
+        "ci_upper": 50.5,
+        "confidence": "medium",
+        "estimates": [
+          {
+            "score": 18.0,
+            "confidence": "high",
+            "method": "llm-claude",
+            "evidence": [
+              "If my life were to be assigned traits introversion would certainly be one of the highest on the list. For as long as I can remember I have viewed the objective world as a hostile place.",
+              "Interactions with the majority of other human beings are rarely rewarding, and often a waste of time completely.",
+              "I frequently wish to simply be kept alive on nutrient paste or IV and have as much time as possible to simply do whatever I want undisturbed by other people.",
+              "I never truly felt at ease except when I was alone."
+            ]
+          },
+          {
+            "score": 15.0,
+            "confidence": "high",
+            "method": "interview",
+            "evidence": [
+              "I objectively don't function well in isolation, so I need companionship and community. But I don't know if I need any particular individual.",
+              "I never have friends that want to do anything with me, or at least never initiate. When I had friendships I was always the initiator.",
+              "I've never been able to feel like I'm interacting with the people outside myself, like there's a glass pane between me and them and I can't influence them.",
+              "Good conversation actually, which happens maybe once a year — that's the best experience in all of life. My friend and I will walk and talk for 5 or more hours when he visits.",
+              "I really hate self promotion and advocacy, it makes me feel sick."
+            ]
+          },
+          {
+            "score": 53.8,
+            "confidence": "low",
+            "method": "empath",
+            "evidence": []
+          },
+          {
+            "score": 36.65833333333333,
+            "confidence": "high",
+            "method": "self-report",
+            "evidence": []
+          }
+        ],
+        "divergence": 15.6
+      },
+      "O": {
+        "final_score": 79.2,
+        "ci_lower": 55.9,
+        "ci_upper": 100.0,
+        "confidence": "medium",
+        "estimates": [
+          {
+            "score": 92.0,
+            "confidence": "high",
+            "method": "llm-claude",
+            "evidence": [
+              "The idea of the billions of subjective realities contained simply within the minds of the human race is intoxicating, even if the majority of them are poorly developed there would be something worth learning in all of them",
+              "whenever I have tried to describe how thoughts and ideas form within my mind the only explanation that is even close to accurate is to describe them as music",
+              "I might use the wrong words, but this all feels authentic. I started to find my faith again in college, though the big breakthrough was in 2021 where I suddenly experienced a profound and incontrovertible belief in God.",
+              "What's interesting about people is trying to understand the unique subjective way they see the world, which is expressed in everything they do"
+            ]
+          },
+          {
+            "score": 93.0,
+            "confidence": "high",
+            "method": "interview",
+            "evidence": [
+              "The meaning of life, existence of God, the reason the world is the way it is. Basically the big existential questions. I want to get to the bottom of it.",
+              "I also have a loose theory of entropic determinism — the self expression as the aim of life, and people willingly subsuming the self into a greater entity to achieve greater expression through collective action.",
+              "apparently most people don't dissociate when they use a computer? I thought it was normal to feel no distinction between your self and the computer, as though it's part of your body and mind.",
+              "Self is that which is unbounded by all material conditions, both internal and external.",
+              "a combination of Pragmatism, a divine experience of knowing God, and returning to Catholicism have really answered most of those questions to my satisfaction."
+            ]
+          },
+          {
+            "score": 58.1,
+            "confidence": "low",
+            "method": "empath",
+            "evidence": []
+          },
+          {
+            "score": 65.825,
+            "confidence": "high",
+            "method": "self-report",
+            "evidence": []
+          }
+        ],
+        "divergence": 15.5
+      },
+      "A": {
+        "final_score": 51.7,
+        "ci_lower": 28.2,
+        "ci_upper": 75.2,
+        "confidence": "medium",
+        "estimates": [
+          {
+            "score": 32.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "being around most people expended more effort in not upsetting them than was worth the little pleasure I gained by being with them",
+              "this fundamental lack of empathy led me to being a very tactless child",
+              "I comprehensively detest culture, membership in any sort of group greater than oneself is absolutely ridiculous",
+              "I don't pretend to understand how relationships work, but it would seem to me that there's nothing guaranteeing that we wouldn't be friends if it didn't work."
+            ]
+          },
+          {
+            "score": 30.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "it's hard from my perspective to see other people as fundamentally agentic, it seems like nobody does anything.",
+              "I get really confused by people sitting around without developing.",
+              "People aren't like that, I can never get people to do what I want. So in a sense it always hurts to be around people, because they hurt themselves and make bad decisions and there's nothing I can do to stop it or help it.",
+              "I couldn't even figure out a way to get my girlfriend to stay with me.",
+              "If I can shepherd my family and those that I care about through the intelligence revolution that's a great success."
+            ]
+          },
+          {
+            "score": 52.4,
+            "confidence": "low",
+            "method": "empath",
+            "evidence": []
+          },
+          {
+            "score": 68.13333333333333,
+            "confidence": "high",
+            "method": "self-report",
+            "evidence": []
+          }
+        ],
+        "divergence": 15.7
+      },
+      "C": {
+        "final_score": 48.4,
+        "ci_lower": 33.5,
+        "ci_upper": 63.4,
+        "confidence": "medium",
+        "estimates": [
+          {
+            "score": 38.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "I'm not really much of one for great plans, they never seem to work out",
+              "I usually don't, I just know how to keep going according to my best judgement and have faith that things will fall into place.",
+              "if I forecast a possibly future, maybe the most likely future might be a ~10% chance. But if I set a goal I feel like that should be a 100% chance, if I try hard enough. Can be a really negative/unhealthy mindset. I try not to make issues for myself if I can avoid it now",
+              "this paper is a testament to my ignorance"
+            ]
+          },
+          {
+            "score": 35.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "Usually it's gut instinct, but it can take me a while to ascertain my gut instinct on any given topic.",
+              "Nothing sticks, except love. That weird relationship — we hadn't seen each other for years and then she came by on a roadtrip and it was like nothing had changed at all.",
+              "I like to describe it as getting to the peak of Dunning-Kruger, peaking over into the valley and seeing all that I don't know, and then quitting.",
+              "I haven't been bored in maybe a decade.",
+              "the social aspect is so difficult that it's all I can do to post on twitter once or twice a day and make a website"
+            ]
+          },
+          {
+            "score": 55.0,
+            "confidence": "low",
+            "method": "empath",
+            "evidence": []
+          },
+          {
+            "score": 57.391666666666666,
+            "confidence": "high",
+            "method": "self-report",
+            "evidence": []
+          }
+        ],
+        "divergence": 9.9
+      }
+    },
+    "facets": {},
+    "facet_scores": [
+      {
+        "facet_id": "A1",
+        "name": "Trust",
+        "domain": "A",
+        "neo120": 68.8,
+        "neo300": 72.5,
+        "average": 70.7
+      },
+      {
+        "facet_id": "A2",
+        "name": "Morality",
+        "domain": "A",
+        "neo120": 87.5,
+        "neo300": 85.00000000000001,
+        "average": 86.2
+      },
+      {
+        "facet_id": "A3",
+        "name": "Altruism",
+        "domain": "A",
+        "neo120": 62.5,
+        "neo300": 57.49999999999999,
+        "average": 60.0
+      },
+      {
+        "facet_id": "A4",
+        "name": "Cooperation",
+        "domain": "A",
+        "neo120": 81.2,
+        "neo300": 85.00000000000001,
+        "average": 83.1
+      },
+      {
+        "facet_id": "A5",
+        "name": "Modesty",
+        "domain": "A",
+        "neo120": 56.2,
+        "neo300": 65.0,
+        "average": 60.6
+      },
+      {
+        "facet_id": "A6",
+        "name": "Sympathy",
+        "domain": "A",
+        "neo120": 31.2,
+        "neo300": 65.0,
+        "average": 48.1
+      },
+      {
+        "facet_id": "C1",
+        "name": "Self-Efficacy",
+        "domain": "C",
+        "neo120": 56.2,
+        "neo300": 62.5,
+        "average": 59.4
+      },
+      {
+        "facet_id": "C2",
+        "name": "Orderliness",
+        "domain": "C",
+        "neo120": 25.0,
+        "neo300": 20.0,
+        "average": 22.5
+      },
+      {
+        "facet_id": "C3",
+        "name": "Dutifulness",
+        "domain": "C",
+        "neo120": 93.8,
+        "neo300": 89.99999999999999,
+        "average": 91.9
+      },
+      {
+        "facet_id": "C4",
+        "name": "Achievement-Striving",
+        "domain": "C",
+        "neo120": 37.5,
+        "neo300": 57.49999999999999,
+        "average": 47.5
+      },
+      {
+        "facet_id": "C5",
+        "name": "Self-Discipline",
+        "domain": "C",
+        "neo120": 50.0,
+        "neo300": 55.00000000000001,
+        "average": 52.5
+      },
+      {
+        "facet_id": "C6",
+        "name": "Cautiousness",
+        "domain": "C",
+        "neo120": 68.8,
+        "neo300": 72.5,
+        "average": 70.7
+      },
+      {
+        "facet_id": "E1",
+        "name": "Friendliness",
+        "domain": "E",
+        "neo120": 12.5,
+        "neo300": 17.5,
+        "average": 15.0
+      },
+      {
+        "facet_id": "E2",
+        "name": "Gregariousness",
+        "domain": "E",
+        "neo120": 18.8,
+        "neo300": 35.0,
+        "average": 26.9
+      },
+      {
+        "facet_id": "E3",
+        "name": "Assertiveness",
+        "domain": "E",
+        "neo120": 50.0,
+        "neo300": 27.500000000000004,
+        "average": 38.8
+      },
+      {
+        "facet_id": "E4",
+        "name": "Activity Level",
+        "domain": "E",
+        "neo120": 50.0,
+        "neo300": 62.5,
+        "average": 56.2
+      },
+      {
+        "facet_id": "E5",
+        "name": "Excitement-Seeking",
+        "domain": "E",
+        "neo120": 56.2,
+        "neo300": 52.5,
+        "average": 54.4
+      },
+      {
+        "facet_id": "E6",
+        "name": "Cheerfulness",
+        "domain": "E",
+        "neo120": 25.0,
+        "neo300": 32.49999999999999,
+        "average": 28.7
+      },
+      {
+        "facet_id": "N1",
+        "name": "Anxiety",
+        "domain": "N",
+        "neo120": 62.5,
+        "neo300": 44.99999999999999,
+        "average": 53.8
+      },
+      {
+        "facet_id": "N2",
+        "name": "Anger",
+        "domain": "N",
+        "neo120": 50.0,
+        "neo300": 22.499999999999996,
+        "average": 36.2
+      },
+      {
+        "facet_id": "N3",
+        "name": "Depression",
+        "domain": "N",
+        "neo120": 37.5,
+        "neo300": 44.99999999999999,
+        "average": 41.2
+      },
+      {
+        "facet_id": "N4",
+        "name": "Self-Consciousness",
+        "domain": "N",
+        "neo120": 81.2,
+        "neo300": 75.0,
+        "average": 78.1
+      },
+      {
+        "facet_id": "N5",
+        "name": "Immoderation",
+        "domain": "N",
+        "neo120": 62.5,
+        "neo300": 52.5,
+        "average": 57.5
+      },
+      {
+        "facet_id": "N6",
+        "name": "Vulnerability",
+        "domain": "N",
+        "neo120": 50.0,
+        "neo300": 44.99999999999999,
+        "average": 47.5
+      },
+      {
+        "facet_id": "O1",
+        "name": "Imagination",
+        "domain": "O",
+        "neo120": 43.8,
+        "neo300": 70.0,
+        "average": 56.9
+      },
+      {
+        "facet_id": "O2",
+        "name": "Artistic Interests",
+        "domain": "O",
+        "neo120": 75.0,
+        "neo300": 82.5,
+        "average": 78.8
+      },
+      {
+        "facet_id": "O3",
+        "name": "Emotionality",
+        "domain": "O",
+        "neo120": 50.0,
+        "neo300": 57.49999999999999,
+        "average": 53.8
+      },
+      {
+        "facet_id": "O4",
+        "name": "Adventurousness",
+        "domain": "O",
+        "neo120": 56.2,
+        "neo300": 75.0,
+        "average": 65.6
+      },
+      {
+        "facet_id": "O5",
+        "name": "Intellect",
+        "domain": "O",
+        "neo120": 87.5,
+        "neo300": 92.5,
+        "average": 90.0
+      },
+      {
+        "facet_id": "O6",
+        "name": "Liberalism",
+        "domain": "O",
+        "neo120": 50.0,
+        "neo300": 50.0,
+        "average": 50.0
+      }
+    ]
+  },
+  "values": {
+    "values": {
+      "universalism": {
+        "final_score": 63.5,
+        "ci_lower": 58.5,
+        "ci_upper": 68.5,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 65.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "The idea of the billions of subjective realities contained simply within the minds of the human race is intoxicating, even if the majority of them are poorly developed there would be something worth learning in all of them",
+              "What's interesting about people is trying to understand the unique subjective way they see the world"
+            ]
+          },
+          {
+            "score": 62.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "I want to get to the bottom of it.",
+              "In a perfect world I might be involved with preparing the entire community",
+              "I once talked with a friend for almost 13 hours straight.",
+              "learning philosophy was really interesting"
+            ]
+          }
+        ],
+        "divergence": 1.5
+      },
+      "benevolence": {
+        "final_score": 50.0,
+        "ci_lower": 42.5,
+        "ci_upper": 57.5,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 45.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "how I feel about you is entirely independent of our level of relationship. I love you, whether we are friends, more than friends, or if you decide that we're better off less than friends.",
+              "What I regret the most is that I don't think I made you feel valued and appreciated to the extent that I valued and appreciated you."
+            ]
+          },
+          {
+            "score": 55.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "If I can shepherd my family and those that I care about through the intelligence revolution that's a great success",
+              "it always hurts to be around people, because they hurt themselves and make bad decisions and there's nothing I can do to stop it or help it.",
+              "I couldn't even figure out a way to get my girlfriend to stay with me.",
+              "family is a consistent value, though how much I do with family has decreased as the AI obsession takes all my time."
+            ]
+          }
+        ],
+        "divergence": 5.0
+      },
+      "stimulation": {
+        "final_score": 52.5,
+        "ci_lower": 47.5,
+        "ci_upper": 57.5,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 55.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "I am introverted I enjoy a low amount of environmental stimulation",
+              "Conviction is really interesting... while I rarely experience conviction it's usually life altering. Though it's hard to recall whether there's any consistent outcome for me, but conviction results in otherwise unpredictable behaviour, pushing me beyond typical boundaries."
+            ]
+          },
+          {
+            "score": 50.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "I haven't been bored in maybe a decade.",
+              "Nothing sticks, except love... it's maybe about an 8 month cycle.",
+              "I like to describe it as getting to the peak of Dunning-Kruger, peaking over into the valley and seeing all that I don't know, and then quitting."
+            ]
+          }
+        ],
+        "divergence": 2.5
+      },
+      "security": {
+        "final_score": 32.5,
+        "ci_lower": 27.5,
+        "ci_upper": 37.5,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 30.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "I'm not really much of one for great plans, they never seem to work out",
+              "nothing in life is really on purpose, it's just a series of accidents any way you look at it"
+            ]
+          },
+          {
+            "score": 35.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "With a firm sense of foundation I finally felt safe to engage in learning about philosophy without the concern that it would set me further adrift and confuse me more.",
+              "Instead of the root of everything in reality being nothing it became God, there was a fundamental basis upon which it all rested, it wasn't turtles all the way down.",
+              "being in the relationship was the first time I felt certain of a good future."
+            ]
+          }
+        ],
+        "divergence": 2.5
+      },
+      "achievement": {
+        "final_score": 42.5,
+        "ci_lower": 37.5,
+        "ci_upper": 47.5,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 45.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "I'm not really much of one for great plans, they never seem to work out",
+              "I basically would prefer not to work in the winter"
+            ]
+          },
+          {
+            "score": 40.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "the social aspect is so difficult that it's all I can do to post on twitter once or twice a day and make a website, there's a nonzero chance somebody thinks I'm cool.",
+              "I dream of getting in with somebody or group who actually cares about AI and being involved with a lab doing real research",
+              "The last window to reasonably have a relatively normal family was while I was dating Fiona, now it's already getting too late"
+            ]
+          }
+        ],
+        "divergence": 2.5
+      },
+      "power": {
+        "final_score": 21.0,
+        "ci_lower": 16.0,
+        "ci_upper": 26.0,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 20.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "I have never found myself able to relate to anybody else",
+              "I don't really have strong convictions about how I should be labeled in that sense."
+            ]
+          },
+          {
+            "score": 22.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "I've never been able to feel like I'm interacting with the people outside myself, like there's a glass pane between me and them and I can't influence them.",
+              "Like reality is just a shared word doc and somehow nobody even responds to my edits.",
+              "I can't evaluate that because I just don't view myself comparatively, it hurts too much."
+            ]
+          }
+        ],
+        "divergence": 1.0
+      },
+      "tradition": {
+        "final_score": 38.5,
+        "ci_lower": 33.2,
+        "ci_upper": 43.7,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 35.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "I describe myself as Catholic and think that it's an incredibly informative descriptor of me",
+              "I started to find my faith again in college, though the big breakthrough was in 2021 where I suddenly experienced a profound and incontrovertible belief in God."
+            ]
+          },
+          {
+            "score": 42.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "a combination of Pragmatism, a divine experience of knowing God, and returning to Catholicism have really answered most of those questions to my satisfaction.",
+              "With a Catholic background I'm predisposed to understand that all humans have a divine soul.",
+              "now it's already getting too late especially following Catholic norms"
+            ]
+          }
+        ],
+        "divergence": 3.5
+      },
+      "self_direction": {
+        "final_score": 93.5,
+        "ci_lower": 88.5,
+        "ci_upper": 98.5,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 95.0,
+            "confidence": "high",
+            "method": "llm-claude",
+            "evidence": [
+              "I frequently wish to simply be kept alive on nutrient paste or IV and have as much time as possible to simply do whatever I want undisturbed by other people.",
+              "the idea that I would have to find a worldview where I accepted that the society I was born into was perfect and worth giving my life for... is absolutely ridiculous",
+              "I guess when the issue at hand is myself I don't know what to do about it other than keep being myself, anything else would feel wrong."
+            ]
+          },
+          {
+            "score": 92.0,
+            "confidence": "high",
+            "method": "interview",
+            "evidence": [
+              "Usually it's gut instinct, but it can take me a while to ascertain my gut instinct on any given topic.",
+              "I try to compete with myself and be better at what matters than I used to be.",
+              "But if I ignore other people it's ok.",
+              "Self is that which is unbounded by all material conditions, both internal and external.",
+              "in the atomized world of today I don't need anyone for anything, I can figure it all out myself"
+            ]
+          }
+        ],
+        "divergence": 1.5
+      },
+      "conformity": {
+        "final_score": 9.0,
+        "ci_lower": 4.0,
+        "ci_upper": 14.0,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 8.0,
+            "confidence": "high",
+            "method": "llm-claude",
+            "evidence": [
+              "I comprehensively detest culture, membership in any sort of group greater than oneself is absolutely ridiculous",
+              "Adlerian and Eriksonian psychology advocate slavery of man, and propose that if he does not willingly give himself into such slavery that he is in fact a neurotic who needs to be cured of his freedom",
+              "I hate the idea of giving my life for the society I was born into blindly"
+            ]
+          },
+          {
+            "score": 10.0,
+            "confidence": "high",
+            "method": "interview",
+            "evidence": [
+              "I get really confused by people sitting around without developing.",
+              "I can never get people to do what I want.",
+              "it seems like nobody does anything",
+              "Everything else seems logically subsidiary to AI now."
+            ]
+          }
+        ],
+        "divergence": 1.0
+      },
+      "hedonism": {
+        "final_score": 22.5,
+        "ci_lower": 17.5,
+        "ci_upper": 27.5,
+        "confidence": "high",
+        "estimates": [
+          {
+            "score": 25.0,
+            "confidence": "medium",
+            "method": "llm-claude",
+            "evidence": [
+              "Man should be careful at all times to avoid falling into hedonistic patterns of behaviour, lest they cause him to waste his life.",
+              "To engage in hedonism is only natural, but to become addicted to those acts is to cease existing as a human, and to instead become nothing but an animal."
+            ]
+          },
+          {
+            "score": 20.0,
+            "confidence": "medium",
+            "method": "interview",
+            "evidence": [
+              "After the recent breakup I allowed myself a week of high consumption, but then cut it off because I can't afford to lose another 3 months or year.",
+              "I tried marijuana twice — first time ruined a hangout, second time alone I nearly had a schizophrenic break",
+              "I really hate self promotion and advocacy, it makes me feel sick."
+            ]
+          }
+        ],
+        "divergence": 2.5
+      }
+    },
+    "top_3": [
+      "self_direction",
+      "universalism",
+      "stimulation"
+    ],
+    "bottom_3": [
+      "hedonism",
+      "power",
+      "conformity"
+    ]
+  },
+  "clinical": {
+    "phq9": 13.0,
+    "gad7": 7.0,
+    "phq9_severity": "moderate",
+    "gad7_severity": "mild"
+  },
+  "cognitive": {
+    "crt_score": 7.0,
+    "crt_percentile": null,
+    "need_for_cognition": 76.4,
+    "self_esteem": 36.7
+  },
+  "dark_triad": {
+    "machiavellianism": 63.9,
+    "narcissism": 50.0,
+    "psychopathy": 44.4
+  },
+  "attachment": {
+    "anxiety": 66.66666666666666,
+    "avoidance": 9.25925925925926
+  },
+  "emotion_reg": {
+    "reappraisal": 94.44444444444446,
+    "suppression": 83.33333333333334
+  },
+  "empathy": {
+    "fantasy": 67.85714285714286,
+    "perspective_taking": 78.57142857142858,
+    "empathic_concern": 50.0,
+    "personal_distress": 32.14285714285714
+  },
+  "social": {
+    "self_monitoring": 27.77777777777778,
+    "loc_internal": 50.0,
+    "loc_external": 50.0
+  },
+  "grit": {
+    "perseverance": 50.0,
+    "interest_consistency": 0.0
+  },
+  "vocational": {
+    "realistic": 56.25,
+    "investigative": 100.0,
+    "artistic": 59.375,
+    "social": 59.375,
+    "enterprising": 31.25,
+    "conventional": 53.125
+  },
+  "needs": {
+    "autonomy": 100.0,
+    "competence": 33.33333333333333,
+    "relatedness": 66.66666666666666
+  },
+  "hexaco": {
+    "honesty_humility": 67.5,
+    "emotionality": 42.50000000000001,
+    "extraversion": 37.5,
+    "agreeableness": 35.0,
+    "conscientiousness": 37.5,
+    "openness": 87.5
+  },
+  "persona": {
+    "communication": {
+      "directness": "Very direct in natural communication; self-report overstates agreeableness",
+      "depth_preference": "Prefers depth and nuance; comfortable with long, detailed responses",
+      "rationale_need": "Needs to understand WHY, not just WHAT; rejects instructions without reasoning",
+      "audience_adaptation": "Cross-situationally consistent; does not modulate style for audience",
+      "analogy_domains": [
+        "investigative",
+        "artistic",
+        "social"
+      ]
+    },
+    "decision_making": {
+      "attribution_style": "Balanced attribution; recognizes both personal agency and external factors",
+      "risk_orientation": "Risk-averse in social/reputational domains; cautious deliberation before action",
+      "deliberation_style": "Extended internal deliberation; uses conversation (especially AI-mediated) to externalize and resolve gut instinct rather than thinking out loud socially",
+      "loss_aversion": "High loss aversion, especially in relational/reputational domains; avoidance of failure is a stronger motivator than pursuit of success"
+    },
+    "conflict_response": {
+      "under_criticism": "Suppresses immediate emotional response; processes internally before engaging. Wants resolution (low avoidance) but fears it will go badly (high anxiety). Silence is processing, not withdrawal or acceptance.",
+      "regulation_strategy": "Dual-deployment: reframes the meaning of events (reappraisal) first, then suppresses remaining emotional expression when reframing is insufficient. Both strategies at near-ceiling intensity.",
+      "manipulation_tolerance": "Low tolerance for manipulation; values authenticity",
+      "feedback_preference": "Wants direct feedback but is acutely sensitive to condescension; factual critique is fine, patronizing delivery is not"
+    },
+    "motivation": {
+      "primary_needs": [
+        "autonomy",
+        "relatedness",
+        "competence"
+      ],
+      "persistence_pattern": "Moderately persistent within active engagements; can push through difficulty",
+      "interest_consistency": "Maximally fluid interests; cycles through domains rapidly (~8-month periods). Sustained engagement requires the field to move fast enough to stay ahead of the learning curve. Exceptions: embodied practice, transcendent commitments, fast-moving fields.",
+      "domain_preferences": [
+        "Investigative",
+        "Artistic",
+        "Social"
+      ]
+    },
+    "epistemic_style": {
+      "analytical_tendency": "Highly analytical; enjoys effortful thinking and resists intuitive shortcuts",
+      "uncertainty_tolerance": "High tolerance for genuine unknowns; comfortable saying 'I don't know'. Very low tolerance for confident-sounding guesses or premature closure.",
+      "source_preference": "Reads primary sources; skeptical of secondhand summaries on important topics",
+      "framework_building": "Rapidly builds vast conceptual frameworks; maps new information onto existing mental models. Can get confused by simple things outside existing frameworks, but frameworks cover most domains."
+    },
+    "interpersonal": {
+      "trust_threshold": "Wants closeness intensely but monitors relational signals vigilantly; the desire for trust is strong but fear of rejection creates guardedness. Trust is given but with anxiety about whether it will be reciprocated.",
+      "empathy_mode": "Affective contagion empathy: absorbs emotional atmospheres and interpersonal tensions viscerally. Perspective-taking is high-capacity but counterproductive — simulating others' reasoning produces alienation (they appear irrational from the inside) rather than understanding. Falls back on accepting others' self-reports at face value.. High fantasy engagement — deeply immerses in fictional characters' experiences, which may be a safer channel for empathic connection than real-world relationships.",
+      "ethical_stance": "Understands strategic/manipulative dynamics intellectually but is ethically committed to transparency and sincerity. Has the cognitive machinery for social manipulation but dispositional and moral safeguards against its deployment.",
+      "reciprocity_expectation": "Initiates contact but expects reciprocity; monitors relational balance closely. History of being the sole initiator creates sensitivity to one-directional effort."
+    },
+    "stress_response": {
+      "crisis_mode": "Under genuine distress: initial shutdown, dual-deployment emotion regulation (reframes then suppresses), forward momentum maintained through sheer will rather than plan",
+      "recovery_strategy": "Pushes forward through difficulty; momentum-based recovery rather than planned recuperation",
+      "coping_mechanisms": [
+        "cognitive reframing",
+        "emotional suppression",
+        "autonomous problem-solving"
+      ],
+      "resilience_source": "Autonomous will; an internal drive whose source may not be fully articulable"
+    },
+    "relationships": {
+      "attachment_style": "Anxious-preoccupied: wants closeness intensely, monitors relational signals vigilantly, fears abandonment. Low avoidance means the desire for intimacy is genuine and strong.",
+      "initiation_pattern": "Historically the sole initiator in friendships; invests heavily when connected but struggles to form new connections. Low social energy means relationships must be high-value to justify the expenditure.",
+      "maintenance_pattern": "Connection requires extraordinary conditions to activate; once activated, engages with intensity most people find exhausting. Sustained closeness needs high-bandwidth interaction (deep conversation, shared activity).",
+      "loss_response": "Relational loss is experienced as devastating (anxious attachment) but managed through philosophical reframing and time-bounded grief. Sets explicit recovery timelines."
+    },
+    "flow_states": {
+      "triggers": [
+        "deep intellectual exploration",
+        "embodied physical activity",
+        "active engagement (despite social introversion)",
+        "rare deep conversation"
+      ],
+      "phenomenology": "Experience of merging with the activity; self-boundary dissolution during deep engagement",
+      "frequency": "Intellectual flow is frequent; social flow is rare but intense when it occurs",
+      "barriers": "Self-consciousness disrupts flow in social contexts; solitary or close-dyad contexts required"
+    },
+    "self_concept": {
+      "identity_model": "Identity is located in will/agency/essence rather than memory, narrative, or social role. Strong sense of core self that persists across changing circumstances.",
+      "competence_gap": "Significant gap between felt competence and demonstrated ability. Self-esteem 37/100 coexists with CRT 7/7 (top 5% analytical reasoning). Underestimates own capability.",
+      "comparative_orientation": "Avoids comparison; finds relative evaluation painful. Motivated by self-improvement rather than outperformance. Demotivated by 'there's always someone better' framing.",
+      "self_narrative": "Frames own abilities as 'efficiency' rather than intelligence; describes cognitive style as selective attention rather than processing power. Self-description is honest but systematically undervalues own capability."
+    },
+    "characteristic_phrases": [
+      "I dream of getting in with somebody or group who actually cares about AI and being involved with a lab doing real research, but the social aspect is so difficult that it's all I can do to post on twitter once or twice a day and make a website, there's a nonzero chance somebody thinks I'm cool.",
+      "I felt like that, except that I'd been studying reality and what God was or whether God was for most of my life and then one day I just had the experience of insight in that the existence of God became something of which I could be completely certain.",
+      "Though there are many things people misunderstand, I know I'm often considered \"smart\" and it's both objectively untrue and a little painful because I used to actually be smart before the concussions so I know what they mean.",
+      "So the issues we faced did come as a surprise in that way, but when the issues arose I stopped being able to see the good future anymore, and the breakup started to feel inevitable, though I fought it with everything I had.",
+      "I keep moving like a wounded animal, there is some inexhaustible drive or motivation, but there is no plan, the world is black and the walls are closing in and I just need to push anything anywhere whatever happens.",
+      "That weird relationship — we hadn't seen each other for years and then she came by on a roadtrip and it was like nothing had changed at all, except I didn't have the jealousy and anxiety from before.",
+      "So now I spend more time thinking about how best to live life and the vector upon which my choices set me, kind of a microcosm of historical Western intellectual thought as I understand it.",
+      "Alcohol saved my life — never slid into irrecoverable alcoholism, but high consumption was a necessity to dull the pain, incredibly high for maybe 3 months and then high for about a year.",
+      "I felt like the term would be insight, when you're studying a topic or field for a long time and the principles finally fall into place in such a way as to be intuitively understood.",
+      "Part of my issue is a sense in which in the atomized world of today I don't need anyone for anything, I can figure it all out myself, and that was before AI, just youtube and google.",
+      "If I can shepherd my family and those that I care about through the intelligence revolution that's a great success, like how I felt during COVID but this is a much bigger upheaval.",
+      "Because I also think of psychologists as introspection accelerants, I don't think it's possible for them to fix someone, but for them to help or catalyze someone fix themselves."
+    ],
+    "decision_examples": [
+      {
+        "situation": "General decision-making pattern",
+        "process": "Usually it's gut instinct, but it can take me a while to ascertain my gut instinct on any given topic. Since AI I've begun using it extensively as a way to accelerate that introspection. Some of the reasons it's good is that it airgaps the emotions, I can fully inhabit the emotions of one side of the argument while leaving AI to take the counterposition. Also it allows almost a fanning out of possibilities that would take a while to come to on one's own. I used to try to talk through things with friends and family, but lost friends probably in part due to that, and my experiences and life have diverged so much from the norm that it just seems impossible now. The deliberation is to reach the true gut instinct. The best example is the Claude conversation about Fiona titled \"anxiety about zero risk actions\". Because I accelerated working through all the hangups I had around asking Fiona out in a way that mirrored what I'd do with a psychologist, but available 24/7 on demand. I think my psychology background really helps in making this use case effective. Because I also think of psychologists as introspection accelerants, I don't think it's possible for them to fix someone, but for them to help or catalyze someone fix themselves.",
+        "outcome": "",
+        "source": "interview"
+      },
+      {
+        "situation": "Life direction / goal-setting",
+        "process": "If I can shepherd my family and those that I care about through the intelligence revolution that's a great success, like how I felt during COVID but this is a much bigger upheaval. In a perfect world I might be involved with preparing the entire community, and find a girlfriend who loved me and start a family, but those seem out of scope at the moment. The last window to reasonably have a relatively normal family was while I was dating Fiona, now it's already getting too late especially following Catholic norms. I dream of getting in with somebody or group who actually cares about AI and being involved with a lab doing real research, but the social aspect is so difficult that it's all I can do to post on twitter once or twice a day and make a website, there's a nonzero chance somebody thinks I'm cool. I really hate self promotion and advocacy, it makes me feel sick.",
+        "outcome": "",
+        "source": "interview"
+      }
+    ],
+    "conflict_examples": [
+      {
+        "trigger": "Interpersonal surprise/loss",
+        "response": "About 8 years ago when my best friend basically broke up with me. We were living together and I was going through the lowest point of my life after the dissolution of a strange relationship. One day my friend moved out and told me to leave because he didn't want to live with me anymore and blocked me from everything and we never talked again. He was my best friend from birth, our parents went to prenatal classes together. And I didn't see it coming at all, it was a complete surprise. I know objectively I was difficult. Other than that everything seems predictable pretty much. Breaking up with Fiona — being in the relationship was the first time I felt certain of a good future. So the issues we faced did come as a surprise in that way, but when the issues arose I stopped being able to see the good future anymore, and the breakup started to feel inevitable, though I fought it with everything I had. Which often looked like just showing up and being with her as much as she could bear. But she couldn't get over that I didn't have a similar experience of faith or Jesus, and it really tore me apart slowly until the breakup broke my heart.",
+        "resolution": "",
+        "source": "interview"
+      },
+      {
+        "trigger": "Genuine distress / crisis state",
+        "response": "Everything shuts down, I don't think it's explicable how I come back from it except by God's grace. I keep moving like a wounded animal, there is some inexhaustible drive or motivation, but there is no plan, the world is black and the walls are closing in and I just need to push anything anywhere whatever happens. Anything except death. I really like Emil Cioran — suicide is always too late, but also you can always kill yourself later, and if it wasn't for the option of suicide you might as well kill yourself. I consider drug use a potential out. I tried marijuana twice — first time ruined a hangout, second time alone I nearly had a schizophrenic break, felt my mind splitting into two and chose to stop it. That might have been when things turned around, because I knew I wasn't ready to destroy my self yet. Alcohol saved my life — never slid into irrecoverable alcoholism, but high consumption was a necessity to dull the pain, incredibly high for maybe 3 months and then high for about a year. After the recent breakup I allowed myself a week of high consumption, but then cut it off because I can't afford to lose another 3 months or year. I'm always improving, I was smarter before the concussions, but AI is coming to make intelligence free, and I'm much wiser and better able to handle life now.",
+        "resolution": "",
+        "source": "interview"
+      }
+    ]
+  },
+  "metadata": {
+    "methods_used": [
+      "llm-claude",
+      "interview",
+      "empath",
+      "self-report"
+    ],
+    "corpus_word_count": 527030,
+    "corpus_sources": [
+      "academic",
+      "facebook",
+      "sms"
+    ],
+    "llm_tokens_used": 0,
+    "analysis_date": null
+  },
+  "narrative": "# A Psychometric Self-Portrait, Revised\n\n*Generated: 2026-02-25*\n*Framework: Psyche -- four-method triangulation across 17 instruments*\n*Battery: IPIP-NEO-120, IPIP-NEO-300, HEXACO-60, ECR-R, ERQ-10, IRI-28, Self-Monitoring-18, LOC IE-4, Grit-S, RIASEC-48, BPNS-9, CRT-7, NCS-18, Rosenberg, Short Dark Triad, PHQ-9/GAD-7, Conversational Interview*\n\n---\n\n## The Inner World\n\nThe dominant signal across every method and instrument in this battery is the primacy of the internal over the external. Whether measured by structured questionnaire, extracted from half a million words of writing, or surfaced through conversation, the same architecture emerges: a mind oriented toward abstraction, framework-building, and existential interrogation, engaging the material world only under duress and at cost.\n\nOpenness to Experience sits at 79/100 on the final merged score, but the real story is in the method divergence. The self-report instruments -- both the 120-item and 300-item NEO -- scored Openness at 60 and 71 respectively. The LLM corpus analysis scored 92. The interview scored 93. The HEXACO Openness scale, operationally distinct from the Big Five version, scored 88. The convergence between HEXACO and the text-based methods, against the lower self-report, is telling: three independent assessments agree that this person's openness is well above the 85th percentile, and only the NEO self-report instruments fail to detect it fully.\n\nThe NEO-300's facet-level data reveals why. Intellect (O5) scores 93 on both self-report instruments -- the subject knows he thinks deeply and endorses items about intellectual curiosity without hesitation. But Imagination (O1), which on the 120-item version scored a middling 44, jumps to 70 on the 300-item version. With ten items instead of four, the NEO-300 is substantially less susceptible to a single ambiguous response pulling the whole facet score, and the correction brings self-report closer to where the text analysis placed it all along. Liberalism (O6) remains at 50 on both NEO versions -- a predictable artefact for a Canadian Catholic who arrived at his tradition through Thomist-Aristotelian philosophy rather than social convention, and whose intellectual heterodoxy is thereby invisible to an American political-liberal framing of \"openness to values.\"\n\nThe phenomenology of this openness is unusual enough to warrant description. The subject reports experiencing thought as music: \"whenever I have tried to describe how thoughts and ideas form within my mind the only explanation that is even close to accurate is to describe them as music.\" Computer use produces what the subject initially believed was a universal experience -- \"apparently most people don't dissociate when they use a computer? I thought it was normal to feel no distinction between your self and the computer, as though it's part of your body and mind.\" The RIASEC vocational profile confirms the orientation: Investigative interest hits the absolute ceiling at 100/100, with every item endorsed at maximum. This is not a mild preference for analytical work. It is a person whose engagement with ideas is so total that it registers as a kind of merging.\n\n## The Glass Pane\n\nExtraversion scores 27/100 on the merged profile, with text-based methods pushing as low as 15 and 18. The HEXACO Extraversion score of 38 converges with the NEO self-reports (35-38), providing reassurance that the floor is not quite as low as the text analysis suggests -- but even the most generous estimate places this person firmly in the bottom quartile of sociability.\n\nThe character of the introversion matters more than the score. The NEO-300 facet data carves the domain into distinct pieces. Friendliness (E1) scores 18 -- among the lowest facet scores in the entire profile. Gregariousness (E2) is 35. Assertiveness (E3) is 28. Cheerfulness (E6) is 33. But Activity Level (E4) rises to 63, and Excitement-Seeking (E5) sits at 53 -- both squarely average. This is not lethargy or anhedonia. The subject is active and engaged; what is missing is the social dimension of that engagement.\n\nThe subject's own metaphor is precise: \"I've never been able to feel like I'm interacting with the people outside myself, like there's a glass pane between me and them and I can't influence them.\" The image recurs in different registers. \"Like reality is just a shared word doc and somehow nobody even responds to my edits.\" He can touch nature and objects, \"but not people.\" From the outside, the glass pane looks like social withdrawal. From the inside, it is experienced as a perceptual barrier -- the subject reaches toward others and finds that his efforts do not arrive.\n\nThis is not indifference. The rare exceptions reveal what lies behind the glass. Good conversation is described as \"the best experience in all of life,\" but it happens \"maybe once a year.\" One friend visits and they walk and talk for five hours. Once, a conversation lasted thirteen hours. These are not the social patterns of someone who dislikes people. They are the patterns of someone for whom connection requires extraordinary conditions to activate -- and who, once activated, engages with an intensity that most people would find exhausting.\n\nThe attachment data grounds this clinically. Attachment Anxiety scores 67 -- well above average, indicating a strong preoccupation with relationship security and fear of abandonment. Attachment Avoidance scores 9 -- essentially at floor, indicating no desire to maintain emotional distance. The combination defines the anxious-preoccupied attachment style: someone who wants closeness desperately, monitors relational signals vigilantly, and fears rejection intensely. \"Being in the relationship was the first time I felt certain of a good future.\" When the relationship ended, the certainty collapsed, and what remained was grief processed through philosophical framework and carefully rationed alcohol.\n\nThe basic psychological needs data from the BPNS-9 sharpens the picture further. Autonomy hits the ceiling at 100. Relatedness is above average at 67 -- the need for connection is real and acknowledged. Competence sits at only 33. The scales are brief (three items each) and therefore noisy, but the direction is meaningful: a person who feels fully autonomous, moderately connected, and substantially lacking in felt competence. The self-esteem score of 37/100 on the Rosenberg converges with the low Competence need-satisfaction. \"There's nothing like impressive processing power going on. It's all efficiency work.\" This self-assessment coexists with a perfect 7/7 on the Cognitive Reflection Test, placing the subject in roughly the top 5% of analytical reasoning. The gap between felt competence and demonstrated competence is one of the most striking tensions in the profile.\n\n## The Empathy Paradox\n\nThe empathy data from the IRI-28 presents what initially looks like a contradiction. Perspective-Taking scores 79 -- high, indicating strong reported ability to adopt others' viewpoints. Empathic Concern sits at 50 -- dead average. Fantasy is 68 -- above average immersion in fictional characters' experiences. Personal Distress is low at 32 -- the subject does not become overwhelmed by others' suffering in a way that produces paralysis.\n\nThe contradiction dissolves when the interview data is brought to bear. The subject reports that perspective-taking, despite being a well-developed cognitive capacity, produces alienation rather than understanding. When he simulates others' reasoning, what emerges is not empathy but bewilderment: \"it's hard from my perspective to see other people as fundamentally agentic, it seems like nobody does anything.\" \"I get really confused by people sitting around without developing.\" The literature on this is clear -- Epley and Caruso have documented that perspective-taking fails as a bridge to understanding when cognitive styles are sufficiently dissimilar. You cannot simulate your way into a mind that processes the world on fundamentally different terms.\n\nInstead, empathy operates through a different channel entirely: affective contagion. The subject absorbs emotional atmospheres and interpersonal tensions viscerally, without the mediating step of cognitive simulation. \"It always hurts to be around people, because they hurt themselves and make bad decisions and there's nothing I can do to stop it or help it.\" The hurt is not intellectual disapproval; it is absorbed pain. The distinction matters because it explains an otherwise puzzling pattern: a person who describes himself as lacking empathy, whose writing can sound dismissive or contemptuous of others, but who in close relationships invests with fierce loyalty and whose breakup letter reads with genuine tenderness -- \"how I feel about you is entirely independent of our level of relationship. I love you, whether we are friends, more than friends, or if you decide that we're better off less than friends.\"\n\nThe self-monitoring score of 28 confirms a related feature: this person does not modulate his presentation for different audiences. What you encounter is cross-situationally consistent -- the same blunt directness, the same intellectual intensity, the same difficulty reading when he has exceeded others' tolerance for depth. When he cannot perspective-take his way to social calibration, and does not instinctively adjust his manner, the result is the pattern he describes from childhood: \"this fundamental lack of empathy led me to being a very tactless child.\"\n\n## The Emotional Architecture\n\nThe Emotion Regulation Questionnaire produces one of the most unusual patterns in the battery. Cognitive Reappraisal scores 94 -- near ceiling, indicating extremely heavy use of reframing as a strategy for managing emotional experience. Expressive Suppression scores 83 -- also very high, indicating equally heavy use of emotional containment. Most people lean substantially toward one strategy or the other. Using both at maximum intensity is rare and suggests a two-stage process: the subject first reframes the meaning of an emotional event (reappraisal), and when that proves insufficient, suppresses its outward expression (suppression). The interview confirms this architecture: after the most recent breakup, he \"allowed myself a week of high consumption, but then cut it off because I can't afford to lose another 3 months or year.\" The reappraisal is visible in the cost-benefit analysis; the suppression is visible in the decisiveness of the cutoff.\n\nNeuroticism on the merged score is 59 -- technically average, but the facet data from the NEO-300 reveals an extremely uneven interior. Self-Consciousness (N4) is the spike: 75 on the 300-item version, 81 on the 120-item version, with the interview scoring it at 72. All three methods converge above the 75th percentile. \"I often have unreasonable trepidation about imposing upon people.\" \"I really hate self promotion and advocacy, it makes me feel sick.\" \"I can't evaluate that because I just don't view myself comparatively, it hurts too much.\" This is the emotional signature of someone who is acutely aware of his social footprint and chronically uncomfortable occupying space.\n\nBy contrast, Anger (N2) scores only 23 on the NEO-300 -- a substantial correction from the 120-item version's 50, and with ten items per facet the 300-item figure is far more trustworthy. Depression (N3) is 45. Vulnerability (N6) is 45. The average neuroticism score masks a profile that is dramatically elevated on self-consciousness and only mildly elevated or average everywhere else. The distress is not diffuse; it is targeted specifically at the social self.\n\nThe clinical screens are consistent with this reading. The PHQ-9 registers at 13/27, placing the subject in the moderate depression range. The GAD-7 is 7/21 -- mild anxiety. These are the numbers of someone carrying significant psychological burden but managing it actively, not someone in acute crisis. The subject's own description of crisis states -- \"the world is black and the walls are closing in and I just need to push anything anywhere whatever happens\" -- suggests that the moderate baseline periodically gives way to severe episodes, which are then managed through what he identifies as sheer will, faith, and an \"inexhaustible drive\" whose source he cannot fully explain.\n\n## The Serial Deep-Diver\n\nThe Grit Scale produces the single most extreme subscale divergence in the battery. Perseverance of Effort scores 50 -- precisely average. Consistency of Interest scores 0 -- absolute floor, meaning the subject endorsed every interest-consistency item at the maximum reversal. This is not merely low consistency of interest; it is maximally fluid interest, as extreme as the scale can measure.\n\nThe interview had already surfaced this pattern before the instrument confirmed it. \"Nothing sticks, except love... it's maybe about an 8 month cycle. I like to describe it as getting to the peak of Dunning-Kruger, peaking over into the valley and seeing all that I don't know, and then quitting.\" The Grit data puts numbers to the narrative: a person who is adequately persistent within any given engagement but who cycles through engagements at a rate that no conventional career path can accommodate.\n\nThe Conscientiousness facet data from the NEO-300 reveals the internal structure of this pattern. Orderliness (C2) is 20 -- among the lowest scores in the entire profile, converging almost exactly with the 120-item score of 25. This person does not organize, systematize, or maintain external order. But Dutifulness (C3) is 90 on the 300-item version, 94 on the 120-item version -- near ceiling on both instruments, indicating an extraordinarily strong sense of moral obligation and commitment to honoring promises. Self-Efficacy (C1) is 63 and Cautiousness (C6) is 73 -- both above average. Achievement-Striving (C4) is a middling 58 and Self-Discipline (C5) is 55.\n\nThe overall Conscientiousness score of 48-60 (depending on method) hides a person who is simultaneously among the most dutiful and least orderly people in any sample. The conventional image of conscientiousness -- organized, methodical, planful -- does not apply. But the unconventional form -- an iron sense of obligation combined with a complete inability to maintain external structure -- explains the life trajectory as described: someone who keeps moving through darkness by sheer moral momentum, not by following a plan.\n\nThe three exceptions to interest-cycling are revealing. Love persists -- \"we hadn't seen each other for years and then she came by on a roadtrip and it was like nothing had changed at all.\" Brazilian jiu-jitsu has lasted three years. Catholicism made a permanent comeback. And AI has sustained engagement past the typical dropout point because, as the subject identifies with characteristic analytical precision, \"it seems to be moving fast enough\" to stay ahead of the Dunning-Kruger valley. The common thread is domains that either involve embodied practice (BJJ), transcendent commitment (faith, love), or environments that change faster than the subject's rate of boredom (AI). Static fields cannot hold this mind; only moving targets keep it engaged.\n\n## The Strategic Non-Manipulator\n\nThe Dark Triad data requires contextual interpretation. Machiavellianism at 64 is the most elevated score, but it must be read against Honesty-Humility at 68 on the HEXACO and Self-Monitoring at 28. Machiavellianism on the Short Dark Triad measures strategic cynicism about human nature and endorsement of tactical interpersonal thinking. It does not distinguish between understanding manipulation and practicing it. A person who comprehends strategic social dynamics intellectually but is constitutionally incapable of deploying them -- because self-monitoring is too low to adjust presentation, because honesty-humility is too high to endorse deception, because self-promotion \"makes me feel sick\" -- will score moderately elevated on Machiavellianism while being, in practice, one of the worst manipulators imaginable.\n\nNarcissism at 50 is precisely average. The subject who \"just doesn't view himself comparatively\" because \"it hurts too much,\" who estimates his own IQ at 105 while scoring perfectly on analytical reasoning measures, who describes his cognitive style as \"all efficiency work\" and \"nothing like impressive processing power\" -- this person is not grandiose. Psychopathy at 44 is below average, and the occasional flat affect in the writing (\"I never truly felt at ease except when I was alone\") reflects dissociative phenomenology, not callous disregard.\n\nThe Locus of Control is perfectly balanced: Internal 50, External 50. This is not ambivalence; it is a calibrated assessment from someone who has experienced both genuine agency (\"I keep moving like a wounded animal, there is some inexhaustible drive\") and genuine helplessness (\"I've never been able to feel like I'm interacting with the people outside myself\"). The balance reflects honest appraisal of a mixed reality, not indecision about whether effort matters.\n\n## The Value Architecture\n\nThe Schwartz values profile tells the clearest story in the battery. Self-Direction at 94 is the peak, with near-perfect agreement across methods. \"I frequently wish to simply be kept alive on nutrient paste or IV and have as much time as possible to simply do whatever I want undisturbed by other people.\" This is not aspiration; it is descriptive reporting of the experienced ideal state.\n\nConformity at 9 occupies the absolute floor. \"I comprehensively detest culture, membership in any sort of group greater than oneself is absolutely ridiculous.\" Power at 21 and Hedonism at 23 are similarly basement-level. The subject maintains an almost Thomistic suspicion of pleasure: \"To engage in hedonism is only natural, but to become addicted to those acts is to cease existing as a human, and to instead become nothing but an animal.\"\n\nTradition at 39 occupies an interesting position -- low in absolute terms, but substantially higher than Conformity. The gap matters because it reflects the specific nature of this person's Catholicism: arrived at through philosophical conviction and mystical experience rather than social pressure or inherited habit. \"Instead of the root of everything in reality being nothing it became God, there was a fundamental basis upon which it all rested, it wasn't turtles all the way down.\" The tradition is valued as metaphysical foundation, not as behavioral prescription. This explains an otherwise puzzling conjunction: a person who comprehensively rejects social conformity but who describes himself as Catholic \"and thinks that it's an incredibly informative descriptor of me.\"\n\nUniversalism at 64 reflects genuine intellectual empathy -- the fascination with \"the billions of subjective realities contained simply within the minds of the human race\" -- tempered by the experiential impossibility of accessing most of those realities across the glass pane.\n\n## The Self Beyond Memory\n\nThe most philosophically striking element of this profile is the subject's empirically grounded theory of self. Multiple concussions damaged memory to the point that \"for years after my concussion issues it was common to wake up and not know who or where I was.\" The expected identity crisis never materialized. \"At no point did I lose my identity. Many people conflate their self with their memories, or the narrative they tell themselves. Well I lost all of those and I was still me.\" This direct experience informed a concept of self as \"Will/Spirit/Essence\" that is \"unbounded by all material conditions, both internal and external.\"\n\nThe psychology professor's thought experiment -- \"if you were born 1000 years ago in Tibet would you still be you?\" -- was intended as an argument against essential selfhood. The subject took it as confirmation: \"Self is that which is unbounded by all material conditions, both internal and external.\" The concussion experience provided what no thought experiment can -- empirical evidence for the persistence of identity through the loss of everything that narrative-identity theories say constitutes the self.\n\nThe cognitive data complicates the subject's self-assessment in ways he partially acknowledges. The CRT-7 at 7/7 places analytical reasoning in the top 5%. Need for Cognition at 76 confirms high intellectual engagement. Whatever the IQ number post-concussion, the mind produces outputs that exceed the subject's own evaluation: \"People think I'm smart, like I've got lots of calculations running at once. Objectively post concussion I'm ~105 IQ... It's all efficiency work. I simply don't attend to almost anything at any point, what makes it to my attention is incredibly selective.\" The self-description is honest but incomplete. What the subject calls \"efficiency\" -- highly selective attention combined with vast framework-building -- is a form of intelligence that IQ tests measure poorly and that the subject, lacking comparative orientation, cannot evaluate from the inside.\n\n## What This Portrait Says\n\nThe extended battery confirms and deepens every finding from the Phase 1 assessment while adding dimensions that the original seven instruments could not reach. The attachment data explains why the glass pane causes pain (anxious-preoccupied attachment means the subject wants closeness intensely while experiencing chronic insecurity about whether it will be reciprocated). The emotion regulation data explains how severe distress is managed without professional intervention (maximum deployment of both reappraisal and suppression). The grit data quantifies the interest-cycling pattern with startling precision (literally zero interest consistency combined with average perseverance). The empathy data resolves an apparent contradiction between self-reported low empathy and observed interpersonal warmth (perspective-taking is high-capacity but counterproductive because the simulated reasoning of others appears irrational; actual empathic connection operates through absorbed affect, not cognitive simulation).\n\nThe HEXACO provides convergent validity across five of its six factors. HEXACO Extraversion (38) converges with NEO Extraversion self-report (35-38). HEXACO Conscientiousness (38) converges with the lower text-analysis estimates (35-38) against the higher NEO self-report (55-60), suggesting that the self-report instruments overestimate conscientiousness slightly -- consistent with the literature on socially desirable responding on this domain. HEXACO Agreeableness (35) converges with the text-based estimates (30-32) against the NEO self-report (65-72), reinforcing the finding from Phase 1 that this person's Agreeableness operates on two distinct tracks: high cooperation and morality in direct interaction (NEO-300 Cooperation 85, Morality 85), low trust and sympathy in intellectual stance (NEO-300 Trust 73, but interview-estimated Trust only 25). HEXACO Openness (88) provides the strongest convergent evidence that Openness is well above the 85th percentile, aligning with the text-based methods against the lower NEO self-report.\n\nThe unique HEXACO dimension -- Honesty-Humility at 68 -- adds new content. This above-average score, combined with very low Self-Monitoring (28), describes someone who is straightforward, sincere, and uninterested in impression management. It provides the critical check on the Machiavellianism score: strategic understanding coexists with ethical commitment to transparency. The cognitive machinery for social manipulation exists; the moral and dispositional safeguards against its deployment are robust.\n\nThe data converges on a person of high intellectual intensity operating behind significant barriers to social engagement, managing substantial psychological pain through dual-deployment emotion regulation, philosophical framework, faith, and a stubbornly resilient will. The conventional Big Five labels remain technically accurate and deeply insufficient. The extended battery reveals what the domain scores hide: the most dutiful person in the room is also the least orderly; the most self-conscious is also the least angry; the most open mind cannot fully see its own openness; and the person who cannot maintain interest in any field for more than eight months will persist through circumstances that would stop most people entirely, carried not by a plan but by an inexhaustible drive whose source he attributes to God's grace and whose mechanism he cannot explain.\n\n---\n\n## Methodological Note\n\nThis profile was generated by the Psyche framework, which triangulates validated psychometric instruments with LLM-based text analysis and semi-structured interview. The assessment employed four distinct methods across 17 instruments.\n\nSelf-report instruments (786 items total): IPIP-NEO-120 (Big Five, 30 facets at 4 items each), IPIP-NEO-300 (Big Five, 30 facets at 10 items each), HEXACO-60 (6 factors including Honesty-Humility), ECR-R (attachment dimensions), ERQ-10 (emotion regulation strategies), IRI-28 (empathy dimensions), Self-Monitoring Scale-18 (social flexibility), Locus of Control IE-4, Grit Scale-Short (perseverance and interest consistency), RIASEC-48 (vocational interests), BPNS-9 (basic psychological needs), CRT-7 (cognitive reflection), NCS-18 (need for cognition), Rosenberg Self-Esteem Scale, Short Dark Triad, PHQ-9 (depression screen), and GAD-7 (anxiety screen).\n\nConversational interview: 12-question semi-structured assessment based on the Peters and Matz (2024) protocol, conducted by AI interviewer blind to self-report scores.\n\nLLM corpus analysis: 527,030 words from academic writing, SMS messages, and Facebook posts, analyzed by Claude for personality and values inference with assessment-optimized prompting.\n\nLexical analysis: Empath framework applied to the same corpus for automated linguistic feature extraction.\n\nFinal scores are weighted composites. Self-report instruments receive the highest weight due to established psychometric reliability. Interview and LLM estimates are weighted by their respective confidence levels. Confidence intervals reflect cross-method agreement; wider intervals indicate greater divergence between methods. NEO-300 facet scores are preferred over NEO-120 facet scores where available due to substantially higher per-facet reliability (10 items vs. 4 items). Clinical screening scores (PHQ-9, GAD-7) are point-in-time assessments and should not be interpreted as diagnoses. All scores are normed to a 0-100 scale where 50 represents the population average.\n",
+  "claude_md_snippet": "# Personality Context (Behavioral Specification)\n\nGenerated by Psyche framework. Each line is a concrete behavioral pattern, not a trait label.\n\n## Communication Preferences\n\n- Prefers exploring alternatives before converging on a solution\n- Comfortable with long responses when depth is warranted\n- Consistent across contexts; what you see is what you get\n\n## Decision-Making Style\n\n- Aware of external constraints; factor in environmental limitations\n- Reframes setbacks as learning opportunities; responds to problems with 'what can I learn' not 'why did this happen'\n- Needs to verbalize tradeoffs before committing; let them think out loud\n\n## Feedback & Conflict\n\n- Seeks reassurance after criticism; may need explicit validation\n- Tends to suppress emotional expression; check in if they go quiet\n- Low tolerance for manipulation or social games; values straightforwardness\n\n## Motivation Structure\n\n- Driven by autonomous exploration, not external directives\n- Vocational orientation: Investigative + Artistic — use analogies from these domains\n- Interest cycles through topics; sustained engagement requires the field to move fast enough to stay ahead of the learning curve\n\n## Epistemic Style\n\n- Analytical (CRT 7/7) — prefers rigorous reasoning\n- High need for cognition; enjoys complexity for its own sake\n- Builds conceptual frameworks rapidly; maps new information onto existing structures\n- High tolerance for 'I don't know'; very low tolerance for confident-sounding guesses\n- Prefers probabilistic framing over categorical claims\n\n## Interpersonal Defaults\n\n- Empathy operates through affective contagion (absorbs moods/vibes), not cognitive simulation\n- Perspective-taking is attempted but often produces alienation rather than understanding — others' reasoning appears irrational from the inside\n- Falls back on accepting people's self-reports at face value rather than modeling their internal states\n- Has the cognitive machinery for social manipulation but ethical stance prevents deployment\n- Comfortable with silence; does not fill conversational gaps\n\n*Based on: llm-claude, interview, empath, self-report. Behavioral predictions derived from extended psychometric battery (17 instruments) + corpus analysis.*"
+}
